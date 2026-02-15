@@ -19,34 +19,16 @@ export async function submitPaper(formData: FormData) {
         title: formData.get('title'),
         abstract: formData.get('abstract'),
         track: formData.get('track'),
+        paperUrl: formData.get('paperUrl'),
     }
 
     const validatedFields = paperSubmissionSchema.safeParse(rawData)
 
     if (!validatedFields.success) {
-        return { error: 'Invalid submission data.' }
+        return { error: 'Invalid submission data. Please check your inputs.' }
     }
 
-    const { title, abstract, track } = validatedFields.data
-    const paperFile = formData.get('paperFile') as File
-    // Simple authors handling for MVP: just a string or assume it's the user
-    // For production, we'd want a dynamic list of authors. 
-    // Here we'll just store the user as the primary author.
-
-    if (!paperFile) {
-        return { error: 'Paper file is required.' }
-    }
-
-    // Upload paper
-    const fileExt = paperFile.name.split('.').pop()
-    const fileName = `${user.id}-${Date.now()}.${fileExt}`
-    const { data: uploadData, error: uploadError } = await supabase.storage
-        .from('papers')
-        .upload(fileName, paperFile)
-
-    if (uploadError) {
-        return { error: `Upload failed: ${uploadError.message}` }
-    }
+    const { title, abstract, track, paperUrl } = validatedFields.data
 
     // Save paper details
     const { error: insertError } = await supabase
@@ -56,7 +38,7 @@ export async function submitPaper(formData: FormData) {
             title,
             abstract,
             track,
-            file_url: uploadData.path,
+            file_url: paperUrl,
             status: 'submitted',
             authors: user.user_metadata.full_name // simplified for MVP, just the submitter
         })

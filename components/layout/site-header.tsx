@@ -43,7 +43,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                 <div className="mr-4 hidden md:flex">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
                         <span className="hidden font-bold sm:inline-block">
-                            ICAR 2024
+                            ICAR 2026
                         </span>
                     </Link>
                     <NavigationMenu>
@@ -78,7 +78,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                                 className="flex items-center"
                                 onClick={() => setIsOpen(false)}
                             >
-                                <span className="font-bold">ICAR 2024</span>
+                                <span className="font-bold">ICAR 2026</span>
                             </Link>
                         </div>
                         <div className="flex flex-col gap-4 mt-4 px-7">

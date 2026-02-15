@@ -19,31 +19,16 @@ export async function registerParticipant(formData: FormData) {
         fullName: formData.get('fullName'),
         affiliation: formData.get('affiliation'),
         category: formData.get('category'),
+        paymentProofUrl: formData.get('paymentProof'),
     }
 
     const validatedFields = registrationSchema.safeParse(rawData)
 
     if (!validatedFields.success) {
-        return { error: 'Invalid registration data.' }
+        return { error: 'Invalid registration data. Please check your inputs.' }
     }
 
-    const { fullName, affiliation, category } = validatedFields.data
-    const paymentProof = formData.get('paymentProof') as File
-
-    if (!paymentProof) {
-        return { error: 'Payment proof is required.' }
-    }
-
-    // Upload payment proof
-    const fileExt = paymentProof.name.split('.').pop()
-    const fileName = `${user.id}-${Date.now()}.${fileExt}`
-    const { data: uploadData, error: uploadError } = await supabase.storage
-        .from('receipts')
-        .upload(fileName, paymentProof)
-
-    if (uploadError) {
-        return { error: `Upload failed: ${uploadError.message}` }
-    }
+    const { fullName, affiliation, category, paymentProofUrl } = validatedFields.data
 
     // Save registration details
     const { error: insertError } = await supabase
@@ -53,7 +38,7 @@ export async function registerParticipant(formData: FormData) {
             full_name: fullName,
             affiliation,
             category,
-            payment_proof_url: uploadData.path,
+            payment_proof_url: paymentProofUrl,
             status: 'pending' // pending verification
         })
 
