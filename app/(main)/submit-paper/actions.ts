@@ -3,8 +3,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-
 import { paperSubmissionSchema } from '@/lib/validations/schemas'
+import { sendSubmissionReceipt } from '@/lib/mail'
 
 export async function submitPaper(formData: FormData) {
     const supabase = await createClient()
@@ -45,6 +45,12 @@ export async function submitPaper(formData: FormData) {
 
     if (insertError) {
         return { error: `Submission failed: ${insertError.message}` }
+    }
+
+    // Send receipt email
+    if (user.email) {
+        const authorName = user.user_metadata.full_name || 'Author'
+        sendSubmissionReceipt(user.email, authorName, title).catch(console.error)
     }
 
     revalidatePath('/dashboard')

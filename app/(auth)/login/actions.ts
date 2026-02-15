@@ -33,8 +33,16 @@ export async function login(formData: FormData) {
         return { error: error.message }
     }
 
+    const { data: { user } } = await supabase.auth.getUser()
+    const role = user?.user_metadata?.role
+
     revalidatePath('/', 'layout')
-    redirect('/')
+
+    if (role === 'admin' || user?.email === 'admin@icar2026.org') {
+        redirect('/admin')
+    } else {
+        redirect('/dashboard')
+    }
 }
 
 export async function signup(formData: FormData) {
@@ -45,6 +53,7 @@ export async function signup(formData: FormData) {
         email: formData.get('email'),
         password: formData.get('password'),
         fullName: formData.get('fullName'),
+        role: formData.get('role'),
     }
 
     const validatedFields = signupSchema.safeParse(rawData)
@@ -53,7 +62,7 @@ export async function signup(formData: FormData) {
         return { error: 'Invalid input data.' }
     }
 
-    const { email, password, fullName } = validatedFields.data
+    const { email, password, fullName, role } = validatedFields.data
 
     const { error } = await supabase.auth.signUp({
         email,
@@ -61,6 +70,7 @@ export async function signup(formData: FormData) {
         options: {
             data: {
                 full_name: fullName,
+                role: role,
             },
             emailRedirectTo: `${origin}/auth/callback`,
         },

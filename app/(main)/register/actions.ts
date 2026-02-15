@@ -3,8 +3,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-
 import { registrationSchema } from '@/lib/validations/schemas'
+import { sendWelcomeEmail } from '@/lib/mail'
 
 export async function registerParticipant(formData: FormData) {
     const supabase = await createClient()
@@ -44,6 +44,11 @@ export async function registerParticipant(formData: FormData) {
 
     if (insertError) {
         return { error: `Registration failed: ${insertError.message}` }
+    }
+
+    // Send welcome email (fire and forget to not block UI)
+    if (user.email) {
+        sendWelcomeEmail(user.email, fullName).catch(console.error)
     }
 
     revalidatePath('/dashboard')

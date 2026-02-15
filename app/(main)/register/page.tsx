@@ -245,7 +245,7 @@ export default function RegisterPage() {
                                             <div className="space-y-2">
                                                 <Label htmlFor="paymentProof" className="flex items-center gap-2"><LinkIcon className="h-4 w-4" /> Payment Proof URL</Label>
                                                 <Input id="paymentProof" name="paymentProof" type="url" placeholder="https://drive.google.com/..." required />
-                                                <p className="text-xs text-muted-foreground">Upload receipt to Drive and paste the link.</p>
+                                                <p className="text-xs text-muted-foreground">Upload receipt to Google Drive, enable "Anyone with the link", and paste here.</p>
                                             </div>
                                         </div>
                                     </div>

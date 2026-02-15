@@ -9,14 +9,11 @@ import { Button } from "@/components/ui/button"
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { PasswordInput } from "@/components/ui/password-input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Separator } from "@/components/ui/separator"
 import { login, signup } from "./actions"
 
 export default function LoginPage() {
@@ -80,68 +77,80 @@ export default function LoginPage() {
             </div>
 
             {/* Right Side - Form */}
-            <div className="flex items-center justify-center py-12">
-                <div className="mx-auto grid w-[350px] gap-6">
+            <div className="flex items-center justify-center py-12 bg-background relative">
+                <Button asChild variant="ghost" className="absolute top-4 right-4 md:top-8 md:right-8">
+                    <Link href="/">Back to Home</Link>
+                </Button>
+                <div className="mx-auto w-[400px] space-y-6">
                     <div className="grid gap-2 text-center">
                         <h1 className="text-3xl font-bold">Welcome Back</h1>
-                        <p className="text-balance text-muted-foreground">
+                        <p className="text-muted-foreground">
                             Login or create an account to start your journey.
                         </p>
                     </div>
 
                     <Tabs defaultValue="login" className="w-full">
-                        <TabsList className="grid w-full grid-cols-2 mb-4">
-                            <TabsTrigger value="login">Login</TabsTrigger>
-                            <TabsTrigger value="signup">Sign Up</TabsTrigger>
+                        <TabsList className="grid w-full grid-cols-2 mb-8 h-12 bg-muted/50 p-1">
+                            <TabsTrigger value="login" className="h-full">Login</TabsTrigger>
+                            <TabsTrigger value="signup" className="h-full">Sign Up</TabsTrigger>
                         </TabsList>
 
                         <TabsContent value="login">
-                            <Card className="border-0 shadow-none">
-                                <CardContent className="p-0 space-y-4">
-                                    <form action={handleLogin} className="space-y-4">
-                                        <div className="grid gap-2">
-                                            <Label htmlFor="email">Email</Label>
-                                            <Input id="email" name="email" type="email" placeholder="m@example.com" required />
+                            <div className="space-y-6">
+                                <form action={handleLogin} className="space-y-6">
+                                    <div className="grid gap-3">
+                                        <Label htmlFor="email" className="text-base">Email</Label>
+                                        <Input id="email" name="email" type="email" placeholder="m@example.com" className="h-12 text-lg bg-transparent" required />
+                                    </div>
+                                    <div className="grid gap-3">
+                                        <div className="flex items-center">
+                                            <Label htmlFor="password" className="text-base">Password</Label>
+                                            <Link href="#" className="ml-auto inline-block text-sm underline text-muted-foreground hover:text-primary">
+                                                Forgot password?
+                                            </Link>
                                         </div>
-                                        <div className="grid gap-2">
-                                            <div className="flex items-center">
-                                                <Label htmlFor="password">Password</Label>
-                                                <Link href="#" className="ml-auto inline-block text-sm underline">
-                                                    Forgot your password?
-                                                </Link>
-                                            </div>
-                                            <Input id="password" name="password" type="password" required />
-                                        </div>
-                                        <Button type="submit" className="w-full" disabled={isLoading}>
-                                            {isLoading ? "Logging in..." : "Login"}
-                                        </Button>
-                                    </form>
-                                </CardContent>
-                            </Card>
+                                        <PasswordInput id="password" name="password" className="h-12 text-lg bg-transparent" required />
+                                    </div>
+                                    <Button type="submit" size="lg" className="w-full h-12 text-base mt-2" disabled={isLoading}>
+                                        {isLoading ? "Logging in..." : "Login"}
+                                    </Button>
+                                </form>
+                            </div>
                         </TabsContent>
 
                         <TabsContent value="signup">
-                            <Card className="border-0 shadow-none">
-                                <CardContent className="p-0 space-y-4">
-                                    <form action={handleSignup} className="space-y-4">
-                                        <div className="grid gap-2">
-                                            <Label htmlFor="fullName">Full Name</Label>
-                                            <Input id="fullName" name="fullName" placeholder="John Doe" required />
+                            <div className="space-y-6">
+                                <form action={handleSignup} className="space-y-6">
+                                    <div className="grid gap-3">
+                                        <Label htmlFor="fullName" className="text-base">Full Name</Label>
+                                        <Input id="fullName" name="fullName" placeholder="John Doe" className="h-12 text-lg bg-transparent" required />
+                                    </div>
+                                    <div className="grid gap-3">
+                                        <Label htmlFor="signup-email" className="text-base">Email</Label>
+                                        <Input id="signup-email" name="email" type="email" placeholder="m@example.com" className="h-12 text-lg bg-transparent" required />
+                                    </div>
+                                    <div className="grid gap-3">
+                                        <Label htmlFor="signup-password" className="text-base">Password</Label>
+                                        <PasswordInput id="signup-password" name="password" className="h-12 text-lg bg-transparent" required />
+                                    </div>
+                                    <div className="grid gap-3">
+                                        <Label className="text-base">I want to join as</Label>
+                                        <div className="flex gap-6 pt-1">
+                                            <div className="flex items-center space-x-3">
+                                                <input type="radio" id="attendee" name="role" value="attendee" className="accent-primary h-5 w-5" defaultChecked required />
+                                                <Label htmlFor="attendee" className="font-normal text-base cursor-pointer">Attendee</Label>
+                                            </div>
+                                            <div className="flex items-center space-x-3">
+                                                <input type="radio" id="presenter" name="role" value="presenter" className="accent-primary h-5 w-5" required />
+                                                <Label htmlFor="presenter" className="font-normal text-base cursor-pointer">Presenter</Label>
+                                            </div>
                                         </div>
-                                        <div className="grid gap-2">
-                                            <Label htmlFor="signup-email">Email</Label>
-                                            <Input id="signup-email" name="email" type="email" placeholder="m@example.com" required />
-                                        </div>
-                                        <div className="grid gap-2">
-                                            <Label htmlFor="signup-password">Password</Label>
-                                            <Input id="signup-password" name="password" type="password" required />
-                                        </div>
-                                        <Button type="submit" className="w-full" disabled={isLoading}>
-                                            {isLoading ? "Creating account..." : "Create Account"}
-                                        </Button>
-                                    </form>
-                                </CardContent>
-                            </Card>
+                                    </div>
+                                    <Button type="submit" size="lg" className="w-full h-12 text-base mt-2" disabled={isLoading}>
+                                        {isLoading ? "Creating account..." : "Create Account"}
+                                    </Button>
+                                </form>
+                            </div>
                         </TabsContent>
                     </Tabs>
 

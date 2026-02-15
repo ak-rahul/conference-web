@@ -78,6 +78,11 @@ This project is optimized for deployment on [Vercel](https://vercel.com/).
 3. Add the `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel Project Settings > Environment Variables.
 4. Deploy!
 
+## 📚 Documentation
+
+For a detailed breakdown of the architecture, features, and implementation details, please refer to the [Project Documentation](docs/project_documentation.md).
+For administrative tasks, see the [Admin Guide](docs/ADMIN_GUIDE.md).
+
 ## 📄 License
 
 This project is licensed under the MIT License.

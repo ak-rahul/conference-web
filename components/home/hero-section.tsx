@@ -58,8 +58,10 @@ export function HeroSection() {
                             className="flex flex-col gap-4 min-[400px]:flex-row items-center"
                         >
                             <Link href="/register">
-                                <ShimmerButton className="h-12 px-8 text-lg font-medium shadow-2xl">
-                                    Register Now <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                                <ShimmerButton className="h-12 px-8 text-lg font-medium shadow-2xl flex items-center justify-center">
+                                    <span className="flex items-center gap-2 whitespace-nowrap text-white z-10 relative">
+                                        Register Now <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                                    </span>
                                 </ShimmerButton>
                             </Link>
 

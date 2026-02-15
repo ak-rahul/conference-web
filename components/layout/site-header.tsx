@@ -102,7 +102,16 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                     <nav className="flex items-center gap-2">
                         {user ? (
                             <Button asChild variant="default" size="sm">
-                                <Link href="/dashboard">Dashboard</Link>
+                                <Link href={
+                                    user.user_metadata?.role === 'admin' || user.email === 'admin@icar2026.org'
+                                        ? "/admin"
+                                        : "/dashboard"
+                                }>
+                                    {user.user_metadata?.role === 'admin' || user.email === 'admin@icar2026.org'
+                                        ? "Admin Console"
+                                        : "Dashboard"
+                                    }
+                                </Link>
                             </Button>
                         ) : (
                             <Button asChild variant="default" size="sm">
