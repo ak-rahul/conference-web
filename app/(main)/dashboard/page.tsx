@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { FileText, User, LogOut } from 'lucide-react'
-import { signOut } from '@/app/login/actions'
+import { signOut } from '@/app/(auth)/login/actions'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 export default async function DashboardPage() {
