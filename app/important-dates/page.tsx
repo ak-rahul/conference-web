@@ -4,35 +4,35 @@ import { Calendar, Clock, AlertCircle } from "lucide-react"
 const dates = [
     {
         event: "Paper Submission Deadline",
-        date: "September 1, 2025",
+        date: "February 1, 2025",
         description: "Submit your full paper for review.",
         status: "Upcoming",
         color: "text-red-500"
     },
     {
         event: "Notification of Acceptance",
-        date: "September 20, 2025",
+        date: "February 20, 2025",
         description: "Authors will be notified of the review results.",
         status: "Upcoming",
         color: "text-orange-500"
     },
     {
         event: "Camera-Ready Paper Submission",
-        date: "October 1, 2025",
+        date: "March 1, 2025",
         description: "Final version of accepted papers due.",
         status: "Upcoming",
         color: "text-yellow-500"
     },
     {
         event: "Early Bird Registration Ends",
-        date: "September 15, 2025",
+        date: "February 15, 2025",
         description: "Last day to register at a discounted rate.",
         status: "Upcoming",
         color: "text-blue-500"
     },
     {
         event: "Conference Dates",
-        date: "October 15-16, 2025",
+        date: "March 16-17, 2025",
         description: "The main event in New York City.",
         status: "Upcoming",
         color: "text-green-500"

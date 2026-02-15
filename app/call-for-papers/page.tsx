@@ -86,19 +86,19 @@ export default function CallForPapersPage() {
                     <div className="grid md:grid-cols-4 gap-8">
                         <div>
                             <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Abstract Submission</p>
-                            <p className="text-2xl font-bold mt-2">Aug 15, 2025</p>
+                            <p className="text-2xl font-bold mt-2">Jan 15, 2025</p>
                         </div>
                         <div>
                             <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Full Paper Submission</p>
-                            <p className="text-2xl font-bold mt-2">Sept 1, 2025</p>
+                            <p className="text-2xl font-bold mt-2">Feb 1, 2025</p>
                         </div>
                         <div>
                             <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Acceptance Notification</p>
-                            <p className="text-2xl font-bold mt-2">Sept 20, 2025</p>
+                            <p className="text-2xl font-bold mt-2">Feb 20, 2025</p>
                         </div>
                         <div>
                             <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Camera Ready</p>
-                            <p className="text-2xl font-bold mt-2">Oct 1, 2025</p>
+                            <p className="text-2xl font-bold mt-2">March 1, 2025</p>
                         </div>
                     </div>
                 </section>

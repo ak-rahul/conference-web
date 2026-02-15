@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button"
 import { CountdownTimer } from "@/components/home/countdown-timer"
 
 export function HeroSection() {
-    // Set target date to October 15, 2025
-    const conferenceDate = new Date("2025-10-15T09:00:00")
+    // Set target date to March 16, 2025 at 12:00 PM
+    const conferenceDate = new Date("2025-03-16T12:00:00")
 
     return (
         <section className="relative overflow-hidden py-24 lg:py-32 xl:py-40">
@@ -28,7 +28,7 @@ export function HeroSection() {
                         <div className="flex flex-col gap-4 sm:flex-row">
                             <div className="flex items-center gap-2 text-muted-foreground">
                                 <Calendar className="h-5 w-5 text-primary" />
-                                <span className="font-medium">October 15-16, 2025</span>
+                                <span className="font-medium">March 16-17, 2025</span>
                             </div>
                             <div className="flex items-center gap-2 text-muted-foreground">
                                 <MapPin className="h-5 w-5 text-primary" />
@@ -57,11 +57,11 @@ export function HeroSection() {
                         <div className="w-full max-w-sm space-y-2 pt-4">
                             <div className="flex justify-between text-sm">
                                 <span className="text-muted-foreground">Paper Submission:</span>
-                                <span className="font-medium">Sept 1, 2025</span>
+                                <span className="font-medium">Feb 1, 2025</span>
                             </div>
                             <div className="flex justify-between text-sm">
                                 <span className="text-muted-foreground">Early Bird Reg:</span>
-                                <span className="font-medium">Sept 15, 2025</span>
+                                <span className="font-medium">Feb 15, 2025</span>
                             </div>
                         </div>
                     </div>
