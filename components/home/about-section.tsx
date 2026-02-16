@@ -70,17 +70,7 @@ export function AboutSection() {
                             />
 
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                                <div className="flex items-center gap-4">
-                                    <div className="text-white">
-                                        <p className="font-bold text-2xl">1,200+</p>
-                                        <p className="text-sm text-zinc-300">Attendees Last Year</p>
-                                    </div>
-                                    <div className="h-10 w-px bg-white/20" />
-                                    <div className="text-white">
-                                        <p className="font-bold text-2xl">50+</p>
-                                        <p className="text-sm text-zinc-300">Countries</p>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </motion.div>
