@@ -24,7 +24,7 @@ export function HeroSection() {
                             className="space-y-4"
                         >
                             {/* Registration Label Removed */}
-                            <h1 className="text-3xl font-extrabold tracking-tight lg:text-4xl xl:text-5xl text-balance bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
+                            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl xl:text-6xl text-balance bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
                                 International Conference on <span className="text-primary">Advanced Functional Materials for Clean Energy, Environment, and Healthcare</span>
                             </h1>
                             <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -60,6 +60,11 @@ export function HeroSection() {
                                         Register Now <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                                     </span>
                                 </ShimmerButton>
+                            </Link>
+                            <Link href="#" target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline" className="h-12 px-8 text-lg font-medium border-primary/20 hover:bg-primary/5">
+                                    Brochure
+                                </Button>
                             </Link>
 
                             {/* Submit Paper Button Removed as per request */}

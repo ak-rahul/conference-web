@@ -6,12 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Mail, MapPin, Phone, Send, MessageSquare } from "lucide-react"
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion"
 import { motion } from "framer-motion"
 
 export default function ContactPage() {
@@ -74,16 +68,21 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        <div className="relative w-full h-[300px] rounded-2xl overflow-hidden border border-muted shadow-2xl">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=1000&auto=format&fit=crop"
-                                alt="Map Location"
-                                className="object-cover w-full h-full opacity-90 hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-6">
-                                <span className="flex items-center gap-2 bg-background/80 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium border shadow-sm">
-                                    <MapPin className="w-4 h-4 text-primary" /> View on Google Maps
+                        <div className="relative w-full h-[300px] rounded-2xl overflow-hidden border border-muted shadow-2xl group">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                scrolling="no"
+                                marginHeight={0}
+                                marginWidth={0}
+                                src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Seminar%20Complex,%20Cochin%20University%20of%20Science%20and%20Technology,%20Kochi,%20Kerala&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+                                className="w-full h-full filter grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
+                            >
+                            </iframe>
+                            <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium border shadow-sm pointer-events-none">
+                                <span className="flex items-center gap-2">
+                                    <MapPin className="w-4 h-4 text-primary" /> Seminar Complex, CUSAT
                                 </span>
                             </div>
                         </div>
@@ -138,45 +137,7 @@ export default function ContactPage() {
                     </motion.div>
                 </div>
 
-                {/* FAQ Section */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="max-w-3xl mx-auto space-y-12 pt-16 border-t"
-                >
-                    <div className="text-center space-y-4">
-                        <h2 className="text-3xl font-bold tracking-tighter">Frequently Asked Questions</h2>
-                        <p className="text-muted-foreground">Common questions about the conference and logistics.</p>
-                    </div>
 
-                    <Accordion type="single" collapsible className="w-full space-y-4">
-                        <AccordionItem value="item-1" className="border rounded-xl px-4 bg-muted/20">
-                            <AccordionTrigger className="text-lg font-medium py-6 hover:no-underline">When is the deadline for paper submission?</AccordionTrigger>
-                            <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
-                                The deadline for full paper submission is September 1, 2025. Late submissions will not be accepted. We recommend submitting your abstract early to get preliminary feedback.
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-2" className="border rounded-xl px-4 bg-muted/20">
-                            <AccordionTrigger className="text-lg font-medium py-6 hover:no-underline">Can I register for the conference without submitting a paper?</AccordionTrigger>
-                            <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
-                                Yes, you can register as an attendee/listener. We welcome anyone interested in the field to join us. The "Listener" pass grants you access to all keynote sessions and workshops.
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-3" className="border rounded-xl px-4 bg-muted/20">
-                            <AccordionTrigger className="text-lg font-medium py-6 hover:no-underline">Is there a virtual participation option?</AccordionTrigger>
-                            <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
-                                Yes, ICAM 2026 is a hybrid event. You can choose to attend in-person at CUSAT or virtually via our online platform, which will feature live streaming and interactive Q&A sessions.
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-4" className="border rounded-xl px-4 bg-muted/20">
-                            <AccordionTrigger className="text-lg font-medium py-6 hover:no-underline">Do you offer student discounts?</AccordionTrigger>
-                            <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
-                                Yes, specific discounts are available for full-time students. Please provide a valid student ID during registration to avail of the academic pricing tier.
-                            </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
-                </motion.div>
 
             </div>
         </div>
