@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 
 const committeeMembers = [
     {
-        role: "Patron & General Chair",
+        role: "Patron",
         members: [
             { name: "Prof. Junaid Bushiri", affiliation: "Vice Chancellor, CUSAT", image: "https://i.pravatar.cc/150?u=junaid" }
         ]

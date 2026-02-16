@@ -3,7 +3,7 @@
 import { PageHeader } from "@/components/layout/page-header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle2, FileText, Send, Brain, Database, Cloud, Shield, Code, Calendar } from "lucide-react"
+import { CheckCircle2, FileText, Send, Brain, Database, Cloud, Shield, Code, Calendar, Zap, Battery, Leaf, Recycle, Activity, Dna, FlaskConical, Sun, BookOpen } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
@@ -37,9 +37,10 @@ export default function CallForPapersPage() {
                         </div>
 
                         <div className="flex gap-4">
-                            {/* Submission buttons removed - see Guidelines */}
-                            <Button variant="outline" size="lg" className="h-12 px-6">
-                                <FileText className="w-4 h-4 mr-2" /> Download Template
+                            <Button variant="outline" size="lg" className="h-12 px-6" asChild>
+                                <Link href="https://docs.google.com/document/d/1Q1pJylWkMjjoT_8zEyCgXOoM5HZ63fEF/edit?usp=drive_link&ouid=101924620980532609618&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+                                    <FileText className="w-4 h-4 mr-2" /> Download Abstract Template
+                                </Link>
                             </Button>
                         </div>
 
@@ -71,15 +72,19 @@ export default function CallForPapersPage() {
                             viewport={{ once: true }}
                             className="text-3xl font-bold tracking-tighter"
                         >
-                            Conference Tracks
+                            Theme Areas
                         </motion.h2>
                         <div className="grid gap-4">
                             {[
-                                { title: "AI & Machine Learning", desc: "Deep Learning, NLP, Computer Vision, XAI.", icon: Brain, color: "text-rose-500", bg: "bg-rose-500/10" },
-                                { title: "Data Science & Big Data", desc: "Data Mining, Analytics, Visualization, Warehousing.", icon: Database, color: "text-blue-500", bg: "bg-blue-500/10" },
-                                { title: "IoT & Cloud Computing", desc: "Edge Computing, 5G/6G, Smart Cities, Distributed Systems.", icon: Cloud, color: "text-sky-500", bg: "bg-sky-500/10" },
-                                { title: "Cybersecurity & Privacy", desc: "Cryptography, Network Security, Blockchain, Privacy-preserving AI.", icon: Shield, color: "text-emerald-500", bg: "bg-emerald-500/10" },
-                                { title: "Software Engineering", desc: "Agile, DevOps, Testing, Software Architecture.", icon: Code, color: "text-violet-500", bg: "bg-violet-500/10" },
+                                { title: "Clean Energy", desc: "Renewable sources, hydrogen energy, and fuel cells.", icon: Zap, color: "text-yellow-500", bg: "bg-yellow-500/10" },
+                                { title: "Energy Storage", desc: "Batteries, supercapacitors, and thermal storage.", icon: Battery, color: "text-green-500", bg: "bg-green-500/10" },
+                                { title: "Biomass Conversion", desc: "Biofuels, biochemicals, and waste-to-energy.", icon: Leaf, color: "text-emerald-500", bg: "bg-emerald-500/10" },
+                                { title: "Carbon Circularity", desc: "CO2 capture, utilization, and circular economy.", icon: Recycle, color: "text-blue-500", bg: "bg-blue-500/10" },
+                                { title: "Sensor Materials", desc: "Smart sensors, biosensors, and environmental monitoring.", icon: Activity, color: "text-red-500", bg: "bg-red-500/10" },
+                                { title: "Biofunctional Materials", desc: "Biomaterials, tissue engineering, and drug delivery.", icon: Dna, color: "text-purple-500", bg: "bg-purple-500/10" },
+                                { title: "Sustainable Catalysis", desc: "Green chemistry, nanocatalysis, and electrocatalysis.", icon: FlaskConical, color: "text-cyan-500", bg: "bg-cyan-500/10" },
+                                { title: "Photocatalytic Materials", desc: "Solar fuels, water splitting, and pollutant degradation.", icon: Sun, color: "text-orange-500", bg: "bg-orange-500/10" },
+                                { title: "Energy Policy", desc: "Sustainability frameworks, regulations, and economics.", icon: BookOpen, color: "text-slate-500", bg: "bg-slate-500/10" },
                             ].map((track, i) => (
                                 <motion.div
                                     key={track.title}
