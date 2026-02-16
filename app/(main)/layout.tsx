@@ -12,7 +12,7 @@ export default function MainLayout({
     // Backend logic removed for static site
 
     return (
-        <div className="relative flex min-h-screen flex-col bg-background overflow-hidden">
+        <div className="relative flex min-h-screen flex-col bg-background">
             {/* Professional Animated Grid Background */}
             <div className="fixed inset-0 z-[-1]">
                 <AnimatedGridPattern
