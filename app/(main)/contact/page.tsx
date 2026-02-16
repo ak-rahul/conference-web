@@ -58,8 +58,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg mb-1">Email Support</h3>
-                                        <p className="text-muted-foreground">info@icam2026.org</p>
-                                        <p className="text-muted-foreground">support@icam2026.org</p>
+                                        <p className="text-muted-foreground">sparccusat26@gmail.com</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-muted/50 transition-colors border border-transparent hover:border-muted">
@@ -68,8 +67,8 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                                        <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                                        <p className="text-muted-foreground">Mon-Fri, 9am - 5pm EST</p>
+                                        <p className="text-muted-foreground">+91 8075071886</p>
+                                        <p className="text-muted-foreground">Mon-Fri, 9am - 5pm IST</p>
                                     </div>
                                 </div>
                             </div>

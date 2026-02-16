@@ -7,49 +7,49 @@ import { cn } from "@/lib/utils"
 
 const dates = [
     {
-        event: "Paper Submission Deadline",
-        date: "February 1, 2026",
-        description: "Submit your full paper for review.",
+        event: "Paper Submission Starts",
+        date: "February 3, 2026",
+        description: "Portal opens for abstract and full paper submissions.",
+        status: "Open",
+        color: "text-green-500",
+        bg: "bg-green-500/10",
+        border: "border-green-500/20"
+    },
+    {
+        event: "Paper Submission Ends",
+        date: "February 23, 2026",
+        description: "Deadline for submitting broad abstracts and papers.",
         status: "Upcoming",
         color: "text-red-500",
         bg: "bg-red-500/10",
         border: "border-red-500/20"
     },
     {
-        event: "Notification of Acceptance",
-        date: "February 20, 2026",
-        description: "Authors will be notified of the review results.",
-        status: "Upcoming",
-        color: "text-orange-500",
-        bg: "bg-orange-500/10",
-        border: "border-orange-500/20"
-    },
-    {
-        event: "Camera-Ready Paper Submission",
-        date: "March 1, 2026",
-        description: "Final version of accepted papers due.",
-        status: "Upcoming",
-        color: "text-yellow-500",
-        bg: "bg-yellow-500/10",
-        border: "border-yellow-500/20"
-    },
-    {
-        event: "Early Bird Registration Ends",
-        date: "February 15, 2026",
-        description: "Last day to register at a discounted rate.",
+        event: "Registration Deadline",
+        date: "February 25, 2026",
+        description: "Last date to register for the conference.",
         status: "Upcoming",
         color: "text-blue-500",
         bg: "bg-blue-500/10",
         border: "border-blue-500/20"
     },
     {
-        event: "Conference Dates",
-        date: "March 16-17, 2026",
-        description: "The main event in New York City.",
+        event: "Notification of Acceptance",
+        date: "February 28, 2026",
+        description: "Authors will be notified of review results.",
         status: "Upcoming",
-        color: "text-green-500",
-        bg: "bg-green-500/10",
-        border: "border-green-500/20"
+        color: "text-orange-500",
+        bg: "bg-orange-500/10",
+        border: "border-orange-500/20"
+    },
+    {
+        event: "Conference Dates",
+        date: "March 5-6, 2026",
+        description: "The main event at CUSAT.",
+        status: "Upcoming",
+        color: "text-purple-500",
+        bg: "bg-purple-500/10",
+        border: "border-purple-500/20"
     }
 ]
 
@@ -112,7 +112,7 @@ export default function ImportantDatesPage() {
                     >
                         <AlertCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
                         <p className="text-sm leading-relaxed">
-                            <strong>Note:</strong> All deadlines are at 11:59 PM Eastern Standard Time (EST). Deadlines are strict and no extensions will be granted.
+                            <strong>Note:</strong> All deadlines are at 11:59 PM Indian Standard Time (IST). Deadlines are strict and no extensions will be granted.
                         </p>
                     </motion.div>
                 </div>

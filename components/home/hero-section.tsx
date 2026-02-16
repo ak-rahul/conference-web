@@ -23,12 +23,9 @@ export function HeroSection() {
                             transition={{ duration: 0.5 }}
                             className="space-y-4"
                         >
-                            <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary backdrop-blur-md">
-                                <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                                🎉 Registration Open for 2026
-                            </div>
+                            {/* Registration Label Removed */}
                             <h1 className="text-3xl font-extrabold tracking-tight lg:text-4xl xl:text-5xl text-balance bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
-                                International Conference on <span className="text-primary">Advanced Functional Materials for Clean Energy, Environment, and Healthcare</span> (ICAM 2026)
+                                International Conference on <span className="text-primary">Advanced Functional Materials for Clean Energy, Environment, and Healthcare</span>
                             </h1>
                             <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                                 Join leading experts to discuss the latest innovations in advanced materials and their impact on our future.
@@ -84,12 +81,12 @@ export function HeroSection() {
                             <CountdownTimer targetDate={conferenceDate} />
                             <div className="w-full max-w-sm space-y-4 pt-6">
                                 <div className="flex justify-between items-center text-sm p-3 rounded-lg bg-muted/50">
-                                    <span className="text-muted-foreground">Paper Submission:</span>
-                                    <span className="font-bold font-mono">Feb 1, 2026</span>
+                                    <span className="text-muted-foreground">Submission Starts:</span>
+                                    <span className="font-bold font-mono">Feb 3, 2026</span>
                                 </div>
                                 <div className="flex justify-between items-center text-sm p-3 rounded-lg bg-muted/50">
-                                    <span className="text-muted-foreground">Early Bird Reg:</span>
-                                    <span className="font-bold font-mono">Feb 15, 2026</span>
+                                    <span className="text-muted-foreground">Submission Ends:</span>
+                                    <span className="font-bold font-mono">Feb 23, 2026</span>
                                 </div>
                             </div>
                         </div>

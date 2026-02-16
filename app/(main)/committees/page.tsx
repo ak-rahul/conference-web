@@ -7,33 +7,44 @@ import { motion } from "framer-motion"
 
 const committeeMembers = [
     {
-        role: "General Chairs",
+        role: "Patron",
         members: [
-            { name: "Prof. Alan Turing", affiliation: "University of Cambridge, UK", image: "https://i.pravatar.cc/150?u=alan" },
-            { name: "Dr. Grace Hopper", affiliation: "Yale University, USA", image: "https://i.pravatar.cc/150?u=grace" }
+            { name: "Prof. Junaid Bushiri", affiliation: "Vice Chancellor, CUSAT", image: "https://i.pravatar.cc/150?u=junaid" }
         ]
     },
     {
-        role: "Program Chairs",
+        role: "Conference Chairs",
         members: [
-            { name: "Dr. Ada Lovelace", affiliation: "University of Oxford, UK", image: "https://i.pravatar.cc/150?u=ada" },
-            { name: "Prof. John von Neumann", affiliation: "Princeton University, USA", image: "https://i.pravatar.cc/150?u=john" },
-            { name: "Dr. Claude Shannon", affiliation: "MIT, USA", image: "https://i.pravatar.cc/150?u=claude" }
+            { name: "Prof. Yoosaf Karuvath", affiliation: "Head, DAC, CUSAT", image: "https://i.pravatar.cc/150?u=yoosaf" },
+            { name: "Emeritus Prof. K. Girish Kumar", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=girish" },
+            { name: "Prof. Jorge Beltramini", affiliation: "Queensland University of Technology, Australia", image: "https://i.pravatar.cc/150?u=jorge" }
         ]
     },
     {
-        role: "Publication Chairs",
+        role: "Convener",
         members: [
-            { name: "Dr. Tim Berners-Lee", affiliation: "CERN, Switzerland", image: "https://i.pravatar.cc/150?u=tim" },
-            { name: "Prof. Barbara Liskov", affiliation: "MIT, USA", image: "https://i.pravatar.cc/150?u=barbara" }
+            { name: "Dr. Leena R.", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=leena" }
+        ]
+    },
+    {
+        role: "Co-Convener",
+        members: [
+            { name: "Dr. Swathi Mukundan", affiliation: "Department of Chemical Engineering, Loughborough University, U.K.", image: "https://i.pravatar.cc/150?u=swathi" }
         ]
     },
     {
         role: "Local Organizing Committee",
         members: [
-            { name: "Alice Smith", affiliation: "NY Tech Hub", image: "https://i.pravatar.cc/150?u=alice" },
-            { name: "Bob Johnson", affiliation: "Event Coordinators Inc.", image: "https://i.pravatar.cc/150?u=bob" },
-            { name: "Charlie Brown", affiliation: "City University of New York", image: "https://i.pravatar.cc/150?u=charlie" }
+            { name: "Prof. N. Manoj", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=manoj" },
+            { name: "Prof. P. M. Sabura Begum", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=sabura" },
+            { name: "Prof. Jayashree E. G.", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=jayashree" },
+            { name: "Prof. Suja Haridas", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=suja" },
+            { name: "Dr. Manoj E.", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=manoj_e" },
+            { name: "Dr. Kala R.", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=kala" },
+            { name: "Dr. Sindhu Mathai", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=sindhu" },
+            { name: "Dr. Sebastian Nybin Remello", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=sebastian" },
+            { name: "Dr. Shandev P. P", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=shandev" },
+            { name: "Emeritus Prof. S. Prathapan", affiliation: "DAC, CUSAT", image: "https://i.pravatar.cc/150?u=prathapan" }
         ]
     }
 ]

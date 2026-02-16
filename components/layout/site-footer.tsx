@@ -19,7 +19,7 @@ export function SiteFooter() {
                     <div className="space-y-2 text-sm text-muted-foreground">
                         <div className="flex items-center justify-center md:justify-start gap-2">
                             <Mail className="h-4 w-4" />
-                            <a href="mailto:info@icam2026.org" className="hover:text-primary transition-colors">info@icam2026.org</a>
+                            <a href="mailto:sparccusat26@gmail.com" className="hover:text-primary transition-colors">sparccusat26@gmail.com</a>
                         </div>
                         <p>
                             Mini Seminar Hall, Seminar Complex, CUSAT
