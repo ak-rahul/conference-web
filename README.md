@@ -12,8 +12,8 @@ A modern, static conference landing page built with **Next.js 16**, **Tailwind C
 ## 📅 Important Dates
 
 -   **Conference**: March 05-06, 2026
--   **Paper Submission Deadline**: Feb 01, 2026
--   **Early Bird Registration**: Feb 15, 2026
+-   **Paper Submission Deadline**: Feb 23, 2026
+-   **Registration Deadline**: Feb 25, 2026
 
 ## 🛠️ Tech Stack
 
