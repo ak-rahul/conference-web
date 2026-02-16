@@ -43,7 +43,7 @@ export function SiteHeader({ }: SiteHeaderProps) {
             <div className="container flex h-16 max-w-screen-2xl items-center px-6 md:px-8">
                 <div className="mr-4 hidden md:flex">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
-                        <span className="hidden font-bold sm:inline-block">
+                        <span className="hidden font-bold sm:inline-block text-xl">
                             ICAM 2026
                         </span>
                     </Link>
@@ -52,7 +52,7 @@ export function SiteHeader({ }: SiteHeaderProps) {
                             {routes.map((route) => (
                                 <NavigationMenuItem key={route.href}>
                                     <NavigationMenuLink asChild>
-                                        <Link href={route.href} className={navigationMenuTriggerStyle()}>
+                                        <Link href={route.href} className={cn(navigationMenuTriggerStyle(), "text-base bg-transparent")}>
                                             {route.label}
                                         </Link>
                                     </NavigationMenuLink>
@@ -101,7 +101,7 @@ export function SiteHeader({ }: SiteHeaderProps) {
                         {/* Search or other items */}
                     </div>
                     <nav className="flex items-center gap-2">
-                        <Button asChild variant="default" size="sm">
+                        <Button asChild variant="default" size="default">
                             <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfupJ69J9vTLpca45aYIz0_OwRe74ZUnkU79CTmgzjq-eFqnw/viewform?usp=header" target="_blank" rel="noopener noreferrer">
                                 Register Now
                             </Link>

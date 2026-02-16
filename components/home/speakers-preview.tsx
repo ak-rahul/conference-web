@@ -4,76 +4,90 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import Speaker1 from "@/assets/speakers/1.jpeg"
+import Speaker2 from "@/assets/speakers/2.jpeg"
+import Speaker3 from "@/assets/speakers/3.jpeg"
+import Speaker4 from "@/assets/speakers/4.jpeg"
+import Speaker5 from "@/assets/speakers/5.jpeg"
+import Speaker6 from "@/assets/speakers/6.jpeg"
+import Speaker7 from "@/assets/speakers/7.jpeg"
+import Speaker8 from "@/assets/speakers/8.jpeg"
+import Speaker9 from "@/assets/speakers/9.jpeg"
+import Speaker10 from "@/assets/speakers/10.jpeg"
 
 const speakers = [
     {
         name: "Adjunct Prof. Jorge Beltramini",
         role: "Queensland University of Technology, Australia",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=jorge",
+        image: Speaker1.src,
         initials: "JB",
     },
     {
         name: "Prof. K. George Thomas",
         role: "Department of Chemistry, IISER-Thiruvananthapuram",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=george",
+        image: Speaker2.src,
         initials: "GT",
     },
     {
         name: "Prof. Parasuraman Selvam",
         role: "Department of Chemistry, IIT-Madras, Chennai",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=selvam",
+        image: Speaker3.src,
         initials: "PS",
     },
     {
         name: "Dr. Vijayakumar Chakkooth",
         role: "Senior Principal Scientist, CSIR-NIIST, Thiruvananthapuram",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=vijay",
+        image: Speaker4.src,
         initials: "VC",
     },
     {
         name: "Prof. N. K. Renuka",
         role: "Department of Chemistry, University of Calicut",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=renuka",
+        image: Speaker5.src,
+        position: "35% 5%",
         initials: "NR",
     },
     {
         name: "Dr. Santanu Chaudhuri",
         role: "Chief Technology Officer, Thermax Limited, Pune",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=santanu",
+        image: Speaker6.src,
         initials: "SC",
     },
     {
         name: "Prof. A. Sakthivel",
         role: "Department of Chemistry, Central University of Kerala",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=sakthivel",
+        image: Speaker7.src,
         initials: "AS",
     },
     {
         name: "Prof. Sushanta Kumar Badamali",
         role: "Department of Chemistry, Utkal University, Bhubaneswar",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=sushanta",
+        image: Speaker8.src,
+        position: "center 25%",
         initials: "SB",
     },
     {
         name: "Prof. Kandalam Ramanujachary",
         role: "Department of Chemistry & Biochemistry, Rowan University, USA",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=kandalam",
+        image: Speaker9.src,
+        position: "center 25%",
         initials: "KR",
     },
     {
         name: "Prof. Ida Tiwari",
         role: "Department of Chemistry, Banaras Hindu University, Varanasi",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=ida",
+        image: Speaker10.src,
+        position: "center 25%",
         initials: "IT",
     },
     {
@@ -138,7 +152,7 @@ export function SpeakersPreview() {
                                         <div className="relative">
                                             <div className="absolute -inset-1 bg-gradient-to-br from-primary to-purple-600 rounded-full opacity-0 group-hover:opacity-100 blur transition-all duration-300" />
                                             <Avatar className="h-28 w-28 border-4 border-background relative">
-                                                <AvatarImage src={speaker.image} alt={speaker.name} />
+                                                <AvatarImage src={speaker.image} alt={speaker.name} style={{ objectPosition: speaker.position }} />
                                                 <AvatarFallback className="text-xl">{speaker.initials}</AvatarFallback>
                                             </Avatar>
                                         </div>

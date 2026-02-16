@@ -4,7 +4,18 @@ import { PageHeader } from "@/components/layout/page-header"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { motion } from "framer-motion"
-import { Linkedin, Twitter, Globe } from "lucide-react"
+
+
+import Speaker1 from "@/assets/speakers/1.jpeg"
+import Speaker2 from "@/assets/speakers/2.jpeg"
+import Speaker3 from "@/assets/speakers/3.jpeg"
+import Speaker4 from "@/assets/speakers/4.jpeg"
+import Speaker5 from "@/assets/speakers/5.jpeg"
+import Speaker6 from "@/assets/speakers/6.jpeg"
+import Speaker7 from "@/assets/speakers/7.jpeg"
+import Speaker8 from "@/assets/speakers/8.jpeg"
+import Speaker9 from "@/assets/speakers/9.jpeg"
+import Speaker10 from "@/assets/speakers/10.jpeg"
 
 const speakers = [
     {
@@ -12,7 +23,7 @@ const speakers = [
         role: "Queensland University of Technology, Australia",
         topic: "Keynote Speaker",
         bio: "Distinguished researcher from Queensland University of Technology, Australia.",
-        image: "https://i.pravatar.cc/150?u=jorge",
+        image: Speaker1.src,
         initials: "JB",
     },
     {
@@ -20,7 +31,7 @@ const speakers = [
         role: "Department of Chemistry, IISER-Thiruvananthapuram",
         topic: "Keynote Speaker",
         bio: "Renowned professor from the Department of Chemistry at IISER-Thiruvananthapuram.",
-        image: "https://i.pravatar.cc/150?u=george",
+        image: Speaker2.src,
         initials: "GT",
     },
     {
@@ -28,7 +39,7 @@ const speakers = [
         role: "Department of Chemistry, IIT-Madras, Chennai",
         topic: "Keynote Speaker",
         bio: "Expert academic from the Department of Chemistry, IIT-Madras.",
-        image: "https://i.pravatar.cc/150?u=selvam",
+        image: Speaker3.src,
         initials: "PS",
     },
     {
@@ -36,7 +47,7 @@ const speakers = [
         role: "Senior Principal Scientist, CSIR-NIIST, Thiruvananthapuram",
         topic: "Keynote Speaker",
         bio: "Senior Principal Scientist contributing to research at CSIR-NIIST.",
-        image: "https://i.pravatar.cc/150?u=vijay",
+        image: Speaker4.src,
         initials: "VC",
     },
     {
@@ -44,7 +55,8 @@ const speakers = [
         role: "Department of Chemistry, University of Calicut",
         topic: "Keynote Speaker",
         bio: "Distinguished faculty member from the Department of Chemistry, University of Calicut.",
-        image: "https://i.pravatar.cc/150?u=renuka",
+        image: Speaker5.src,
+        position: "35% 5%",
         initials: "NR",
     },
     {
@@ -52,7 +64,7 @@ const speakers = [
         role: "Chief Technology Officer, Thermax Limited, Pune",
         topic: "Keynote Speaker",
         bio: "Technology leader and CTO at Thermax Limited, Pune.",
-        image: "https://i.pravatar.cc/150?u=santanu",
+        image: Speaker6.src,
         initials: "SC",
     },
     {
@@ -60,7 +72,7 @@ const speakers = [
         role: "Department of Chemistry, Central University of Kerala",
         topic: "Keynote Speaker",
         bio: "Professor at the Department of Chemistry, Central University of Kerala, Kasaragod.",
-        image: "https://i.pravatar.cc/150?u=sakthivel",
+        image: Speaker7.src,
         initials: "AS",
     },
     {
@@ -68,7 +80,8 @@ const speakers = [
         role: "Department of Chemistry, Utkal University, Bhubaneswar",
         topic: "Keynote Speaker",
         bio: "Academic leader from the Department of Chemistry, Utkal University.",
-        image: "https://i.pravatar.cc/150?u=sushanta",
+        image: Speaker8.src,
+        position: "center 25%",
         initials: "SB",
     },
     {
@@ -76,7 +89,8 @@ const speakers = [
         role: "Department of Chemistry & Biochemistry, Rowan University, USA",
         topic: "Keynote Speaker",
         bio: "International expert from the Department of Chemistry & Biochemistry, Rowan University.",
-        image: "https://i.pravatar.cc/150?u=kandalam",
+        image: Speaker9.src,
+        position: "center 25%",
         initials: "KR",
     },
     {
@@ -84,7 +98,8 @@ const speakers = [
         role: "Department of Chemistry, Banaras Hindu University, Varanasi",
         topic: "Keynote Speaker",
         bio: "Distinguished professor from the Department of Chemistry, BHU.",
-        image: "https://i.pravatar.cc/150?u=ida",
+        image: Speaker10.src,
+        position: "center 25%",
         initials: "IT",
     },
     {
@@ -118,14 +133,10 @@ export default function SpeakersPage() {
                                 <div className="md:w-1/3 bg-muted/30 relative flex flex-col items-center justify-center p-6 border-r border-border/50">
                                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                                     <Avatar className="h-32 w-32 border-4 border-background shadow-lg z-10">
-                                        <AvatarImage src={speaker.image} alt={speaker.name} />
+                                        <AvatarImage src={speaker.image} alt={speaker.name} style={{ objectPosition: speaker.position }} />
                                         <AvatarFallback className="text-2xl">{speaker.initials}</AvatarFallback>
                                     </Avatar>
-                                    <div className="flex gap-3 mt-4 relative z-10 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                                        <a href="#" className="text-muted-foreground hover:text-primary"><Linkedin className="h-4 w-4" /></a>
-                                        <a href="#" className="text-muted-foreground hover:text-primary"><Twitter className="h-4 w-4" /></a>
-                                        <a href="#" className="text-muted-foreground hover:text-primary"><Globe className="h-4 w-4" /></a>
-                                    </div>
+
                                 </div>
                                 <div className="flex-1 p-6 flex flex-col justify-center">
                                     <div className="space-y-1 mb-4">

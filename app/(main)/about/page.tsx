@@ -1,7 +1,7 @@
 "use client";
 
 import { PageHeader } from "@/components/layout/page-header"
-import { History, FlaskConical } from "lucide-react"
+import { History, FlaskConical, Landmark } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function AboutPage() {
@@ -57,6 +57,27 @@ export default function AboutPage() {
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed">
                                 The Department has now grown and has emerged as one of the best centers in Chemistry in the State of Kerala. The Department currently offers M.Sc. programme and Ph.D. Programme in Chemistry.
+                            </p>
+                        </div>
+                    </motion.div>
+                </section>
+
+                {/* Queensland University of Technology */}
+                <section className="space-y-8 max-w-4xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="space-y-6"
+                    >
+                        <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium">
+                            <Landmark className="mr-2 h-4 w-4" /> Partner University
+                        </div>
+                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-balance">Queensland University of Technology (QUT)</h2>
+                        <div className="prose dark:prose-invert mx-auto text-left">
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                The Queensland University of Technology (QUT) is a leading public research university based in Brisbane, Australia, known globally as the "university for the real world". Established in its current form in 1989, it has grown to accommodate over 50,000 students, including approximately 9,000 international learners from more than 140 countries.
                             </p>
                         </div>
                     </motion.div>
