@@ -2,7 +2,6 @@
 
 import { PageHeader } from "@/components/layout/page-header"
 import { Card, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { motion } from "framer-motion"
 
 const committeeMembers = [
@@ -74,15 +73,9 @@ export default function CommitteesPage() {
                         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {section.members.map((member, mIndex) => (
                                 <Card key={mIndex} className="group overflow-hidden border-muted/50 hover:border-primary/50 transition-colors">
-                                    <div className="flex items-center p-4 space-x-4">
-                                        <Avatar className="h-16 w-16 border-2 border-primary/20 group-hover:border-primary transition-colors">
-                                            <AvatarImage src={member.image} alt={member.name} />
-                                            <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                                        </Avatar>
-                                        <div>
-                                            <p className="font-semibold text-lg leading-none mb-1 group-hover:text-primary transition-colors">{member.name}</p>
-                                            <p className="text-sm text-muted-foreground line-clamp-1">{member.affiliation}</p>
-                                        </div>
+                                    <div className="flex flex-col p-6 space-y-2">
+                                        <p className="font-semibold text-lg leading-tight group-hover:text-primary transition-colors">{member.name}</p>
+                                        <p className="text-sm text-muted-foreground">{member.affiliation}</p>
                                     </div>
                                 </Card>
                             ))}

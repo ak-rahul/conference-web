@@ -5,53 +5,100 @@ import { Calendar, Clock, AlertCircle, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
-const dates = [
-    {
-        event: "Paper Submission Starts",
-        date: "February 3, 2026",
-        description: "Portal opens for abstract and full paper submissions.",
-        status: "Open",
-        color: "text-green-500",
-        bg: "bg-green-500/10",
-        border: "border-green-500/20"
-    },
-    {
-        event: "Paper Submission Ends",
-        date: "February 23, 2026",
-        description: "Deadline for submitting broad abstracts and papers.",
-        status: "Upcoming",
-        color: "text-red-500",
-        bg: "bg-red-500/10",
-        border: "border-red-500/20"
-    },
-    {
-        event: "Registration Deadline",
-        date: "February 25, 2026",
-        description: "Last date to register for the conference.",
-        status: "Upcoming",
-        color: "text-blue-500",
-        bg: "bg-blue-500/10",
-        border: "border-blue-500/20"
-    },
-    {
-        event: "Notification of Acceptance",
-        date: "February 28, 2026",
-        description: "Authors will be notified of review results.",
-        status: "Upcoming",
-        color: "text-orange-500",
-        bg: "bg-orange-500/10",
-        border: "border-orange-500/20"
-    },
-    {
-        event: "Conference Dates",
-        date: "March 5-6, 2026",
-        description: "The main event at CUSAT.",
-        status: "Upcoming",
-        color: "text-purple-500",
-        bg: "bg-purple-500/10",
-        border: "border-purple-500/20"
-    }
-]
+const getDates = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset time to start of day for accurate comparison
+
+    const events = [
+        {
+            event: "Paper Submission Starts",
+            dateStr: "February 03, 2026",
+            date: new Date("2026-02-03"),
+            description: "Portal opens for abstract and full paper submissions.",
+        },
+        {
+            event: "Paper Submission Ends",
+            dateStr: "February 23, 2026",
+            date: new Date("2026-02-23"),
+            description: "Deadline for submitting broad abstracts and papers.",
+        },
+        {
+            event: "Registration Deadline",
+            dateStr: "February 25, 2026",
+            date: new Date("2026-02-25"),
+            description: "Last date to register for the conference.",
+        },
+        {
+            event: "Notification of Acceptance",
+            dateStr: "February 28, 2026",
+            date: new Date("2026-02-28"),
+            description: "Authors will be notified of review results.",
+        },
+        {
+            event: "Conference Dates",
+            dateStr: "March 05-06, 2026",
+            date: new Date("2026-03-05"), // Using start date for comparison
+            description: "The main event at CUSAT.",
+        }
+    ];
+
+    return events.map(item => {
+        const isPast = item.date < today;
+        const isToday = item.date.toDateString() === today.toDateString();
+
+        let status = "Upcoming";
+        let color = "text-blue-500";
+        let bg = "bg-blue-500/10";
+        let border = "border-blue-500/20";
+
+        if (isPast) {
+            status = "Closed";
+            color = "text-muted-foreground";
+            bg = "bg-muted";
+            border = "border-muted";
+        } else if (isToday) {
+            status = "Open Now";
+            color = "text-green-500";
+            bg = "bg-green-500/10";
+            border = "border-green-500/20";
+        } else if (item.event.includes("Starts") && !isPast) {
+            // Future start date
+            status = "Upcoming";
+            color = "text-orange-500";
+            bg = "bg-orange-500/10";
+            border = "border-orange-500/20";
+        } else {
+            // Future deadline
+            status = "Open";
+            color = "text-green-500";
+            bg = "bg-green-500/10";
+            border = "border-green-500/20";
+        }
+
+        // Override for specific events if needed for visual distinction despite logic
+        if (item.event === "Conference Dates") {
+            if (isPast) {
+                status = "Completed";
+            } else {
+                status = "Upcoming";
+                color = "text-purple-500";
+                bg = "bg-purple-500/10";
+                border = "border-purple-500/20";
+            }
+        }
+
+        return {
+            ...item,
+            status,
+            color,
+            bg,
+            border,
+            date: item.dateStr // Keep original string for display
+        };
+    });
+};
+
+const dates = getDates();
 
 export default function ImportantDatesPage() {
     return (

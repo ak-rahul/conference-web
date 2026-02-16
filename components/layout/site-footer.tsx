@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Globe, Twitter, Linkedin, Facebook, Mail } from "lucide-react"
+import { Globe, Mail } from "lucide-react"
 
 export function SiteFooter() {
     return (
@@ -26,17 +26,7 @@ export function SiteFooter() {
                         </p>
                     </div>
 
-                    <div className="flex gap-4">
-                        <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                            <Twitter className="h-5 w-5" />
-                        </Link>
-                        <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                            <Linkedin className="h-5 w-5" />
-                        </Link>
-                        <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                            <Facebook className="h-5 w-5" />
-                        </Link>
-                    </div>
+                    {/* Social media links removed as per request */}
                 </div>
 
                 <div className="mt-8 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">

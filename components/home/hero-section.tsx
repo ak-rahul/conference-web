@@ -61,7 +61,7 @@ export function HeroSection() {
                                     </span>
                                 </ShimmerButton>
                             </Link>
-                            <Link href="#" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://drive.google.com/file/d/1xIBOEtkVRBvvUrAvGB13JQ9X4ysftep7/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
                                 <Button variant="outline" className="h-12 px-8 text-lg font-medium border-primary/20 hover:bg-primary/5">
                                     Brochure
                                 </Button>
@@ -87,7 +87,7 @@ export function HeroSection() {
                             <div className="w-full max-w-sm space-y-4 pt-6">
                                 <div className="flex justify-between items-center text-sm p-3 rounded-lg bg-muted/50">
                                     <span className="text-muted-foreground">Submission Starts:</span>
-                                    <span className="font-bold font-mono">Feb 3, 2026</span>
+                                    <span className="font-bold font-mono">Feb 03, 2026</span>
                                 </div>
                                 <div className="flex justify-between items-center text-sm p-3 rounded-lg bg-muted/50">
                                     <span className="text-muted-foreground">Submission Ends:</span>

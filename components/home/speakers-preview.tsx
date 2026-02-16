@@ -15,6 +15,8 @@ import Speaker8 from "@/assets/speakers/8.jpeg"
 import Speaker9 from "@/assets/speakers/9.jpeg"
 import Speaker10 from "@/assets/speakers/10.jpeg"
 
+import Speaker11 from "@/assets/speakers/11.jpeg"
+
 const speakers = [
     {
         name: "Adjunct Prof. Jorge Beltramini",
@@ -94,8 +96,9 @@ const speakers = [
         name: "Dr. Swathi Mukundan",
         role: "Department of Chemical Engineering, Loughborough University, U.K.",
         topic: "Keynote Speaker",
-        image: "https://i.pravatar.cc/150?u=swathi",
+        image: Speaker11.src,
         initials: "SM",
+        scale: 1.5,
     },
 ]
 
@@ -114,7 +117,7 @@ export function SpeakersPreview() {
                             World-Class Experts
                         </div>
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                            Keynote Speakers
+                            Speakers
                         </h2>
                         <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
                             Hear from world-renowned experts shaping the future of research.
@@ -152,7 +155,14 @@ export function SpeakersPreview() {
                                         <div className="relative">
                                             <div className="absolute -inset-1 bg-gradient-to-br from-primary to-purple-600 rounded-full opacity-0 group-hover:opacity-100 blur transition-all duration-300" />
                                             <Avatar className="h-28 w-28 border-4 border-background relative">
-                                                <AvatarImage src={speaker.image} alt={speaker.name} style={{ objectPosition: speaker.position }} />
+                                                <AvatarImage
+                                                    src={speaker.image}
+                                                    alt={speaker.name}
+                                                    style={{
+                                                        objectPosition: speaker.position,
+                                                        transform: speaker.scale ? `scale(${speaker.scale})` : undefined
+                                                    }}
+                                                />
                                                 <AvatarFallback className="text-xl">{speaker.initials}</AvatarFallback>
                                             </Avatar>
                                         </div>

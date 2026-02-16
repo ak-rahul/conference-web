@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { PageHeader } from "@/components/layout/page-header"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -7,8 +8,39 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Mail, MapPin, Phone, Send, MessageSquare } from "lucide-react"
 import { motion } from "framer-motion"
+import { toast } from "sonner"
 
 export default function ContactPage() {
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: ""
+    })
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { id, value } = e.target
+        setFormData(prev => ({ ...prev, [id]: value }))
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        const { firstName, lastName, email, subject, message } = formData
+
+        if (!firstName || !email || !message) {
+            toast.error("Please fill in all required fields.")
+            return
+        }
+
+        const mailtoLink = `mailto:sparccusat26@gmail.com?subject=${encodeURIComponent(subject || "Conference Inquiry")}&body=${encodeURIComponent(
+            `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`
+        )}`
+
+        window.location.href = mailtoLink
+        toast.success("Opening your email client...")
+    }
+
     return (
         <div className="flex flex-col min-h-screen">
             <PageHeader
@@ -105,30 +137,30 @@ export default function ContactPage() {
                                 </div>
                             </CardHeader>
                             <CardContent className="flex-1">
-                                <form className="space-y-5 h-full flex flex-col">
+                                <form onSubmit={handleSubmit} className="space-y-5 h-full flex flex-col">
                                     <div className="grid grid-cols-2 gap-5">
                                         <div className="space-y-2">
-                                            <label htmlFor="first-name" className="text-sm font-medium">First name</label>
-                                            <Input id="first-name" placeholder="John" className="h-11 bg-muted/30" />
+                                            <label htmlFor="firstName" className="text-sm font-medium">First name</label>
+                                            <Input id="firstName" value={formData.firstName} onChange={handleChange} placeholder="John" className="h-11 bg-muted/30" required />
                                         </div>
                                         <div className="space-y-2">
-                                            <label htmlFor="last-name" className="text-sm font-medium">Last name</label>
-                                            <Input id="last-name" placeholder="Doe" className="h-11 bg-muted/30" />
+                                            <label htmlFor="lastName" className="text-sm font-medium">Last name</label>
+                                            <Input id="lastName" value={formData.lastName} onChange={handleChange} placeholder="Doe" className="h-11 bg-muted/30" />
                                         </div>
                                     </div>
                                     <div className="space-y-2">
                                         <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                        <Input id="email" placeholder="john@example.com" type="email" className="h-11 bg-muted/30" />
+                                        <Input id="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" type="email" className="h-11 bg-muted/30" required />
                                     </div>
                                     <div className="space-y-2">
                                         <label htmlFor="subject" className="text-sm font-medium">Subject</label>
-                                        <Input id="subject" placeholder="General Inquiry" className="h-11 bg-muted/30" />
+                                        <Input id="subject" value={formData.subject} onChange={handleChange} placeholder="General Inquiry" className="h-11 bg-muted/30" />
                                     </div>
                                     <div className="space-y-2 flex-1">
                                         <label htmlFor="message" className="text-sm font-medium">Message</label>
-                                        <Textarea id="message" placeholder="How can we help you?" className="min-h-[150px] bg-muted/30 resize-none" />
+                                        <Textarea id="message" value={formData.message} onChange={handleChange} placeholder="How can we help you?" className="min-h-[150px] bg-muted/30 resize-none" required />
                                     </div>
-                                    <Button className="w-full h-12 text-base shadow-lg shadow-primary/20">
+                                    <Button type="submit" className="w-full h-12 text-base shadow-lg shadow-primary/20">
                                         <Send className="w-4 h-4 mr-2" /> Send Message
                                     </Button>
                                 </form>
@@ -136,8 +168,6 @@ export default function ContactPage() {
                         </Card>
                     </motion.div>
                 </div>
-
-
 
             </div>
         </div>

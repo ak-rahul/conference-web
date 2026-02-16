@@ -17,6 +17,9 @@ import Speaker8 from "@/assets/speakers/8.jpeg"
 import Speaker9 from "@/assets/speakers/9.jpeg"
 import Speaker10 from "@/assets/speakers/10.jpeg"
 
+
+import Speaker11 from "@/assets/speakers/11.jpeg"
+
 const speakers = [
     {
         name: "Adjunct Prof. Jorge Beltramini",
@@ -107,8 +110,9 @@ const speakers = [
         role: "Department of Chemical Engineering, Loughborough University, U.K.",
         topic: "Keynote Speaker",
         bio: "Researcher from the Department of Chemical Engineering, Loughborough University.",
-        image: "https://i.pravatar.cc/150?u=swathi",
+        image: Speaker11.src,
         initials: "SM",
+        scale: 1.5,
     },
 ]
 
@@ -116,7 +120,7 @@ export default function SpeakersPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <PageHeader
-                title="Keynote Speakers"
+                title="Speakers"
                 description="Renowned experts sharing their insights."
             />
             <div className="container py-16 px-4 md:px-6">
@@ -133,7 +137,14 @@ export default function SpeakersPage() {
                                 <div className="md:w-1/3 bg-muted/30 relative flex flex-col items-center justify-center p-6 border-r border-border/50">
                                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                                     <Avatar className="h-32 w-32 border-4 border-background shadow-lg z-10">
-                                        <AvatarImage src={speaker.image} alt={speaker.name} style={{ objectPosition: speaker.position }} />
+                                        <AvatarImage
+                                            src={speaker.image}
+                                            alt={speaker.name}
+                                            style={{
+                                                objectPosition: speaker.position,
+                                                transform: speaker.scale ? `scale(${speaker.scale})` : undefined
+                                            }}
+                                        />
                                         <AvatarFallback className="text-2xl">{speaker.initials}</AvatarFallback>
                                     </Avatar>
 
