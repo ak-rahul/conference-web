@@ -117,7 +117,7 @@ export default function CallForPapersPage() {
                         <h2 className="text-3xl font-bold">Key Deadlines</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { label: "Abstract Submission Start", date: "Feb 3, 2026", passed: true },
+                                { label: "Abstract Submission Start", date: "Feb 03, 2026", passed: true },
                                 { label: "Abstract Submission End", date: "Feb 23, 2026", passed: false, highlight: true },
                                 { label: "Acceptance Notification", date: "Feb 28, 2026", passed: false },
                             ].map((item, i) => (
