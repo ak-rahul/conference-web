@@ -15,7 +15,7 @@ export default function CallForPapersPage() {
                 description="We invite original research contributions for ICAM 2026."
             />
 
-            <div className="container py-12 px-4 md:px-6 space-y-24">
+            <div className="container py-16 md:py-24 px-4 md:px-6 space-y-24">
 
                 {/* Introduction & Tracks */}
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -126,7 +126,7 @@ export default function CallForPapersPage() {
                                         <Calendar className="w-6 h-6 text-white" />
                                     </div>
                                     <p className="text-xs uppercase tracking-wider font-semibold text-zinc-400">{item.label}</p>
-                                    <p className={`text-2xl font-bold ${item.highlight ? "text-primary" : "text-white"}`}>{item.date}</p>
+                                    <p className="text-2xl font-bold text-white">{item.date}</p>
                                 </div>
                             ))}
                         </div>

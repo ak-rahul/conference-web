@@ -12,7 +12,7 @@ export default function AboutPage() {
                 description="Fostering innovation and collaboration across borders."
             />
 
-            <div className="container py-12 px-4 md:px-6 space-y-24">
+            <div className="container py-16 md:py-24 px-4 md:px-6 space-y-24">
 
                 {/* Conference Overview */}
                 <section className="space-y-8 max-w-4xl mx-auto text-center">

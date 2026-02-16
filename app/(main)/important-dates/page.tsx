@@ -11,13 +11,13 @@ const getDates = () => {
 
     const events = [
         {
-            event: "Paper Submission Starts",
+            event: "Abstract Submission Starts",
             dateStr: "February 03, 2026",
             date: new Date("2026-02-03"),
             description: "Portal opens for abstract and full paper submissions.",
         },
         {
-            event: "Paper Submission Ends",
+            event: "Abstract Submission Ends",
             dateStr: "February 23, 2026",
             date: new Date("2026-02-23"),
             description: "Deadline for submitting broad abstracts and papers.",
@@ -102,48 +102,53 @@ const dates = getDates();
 
 export default function ImportantDatesPage() {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen bg-background">
             <PageHeader
                 title="Important Dates"
                 description="Mark your calendar for these key deadlines."
             />
-            <div className="container py-16 px-4 md:px-6">
-                <div className="max-w-4xl mx-auto space-y-12">
+            <div className="container py-16 md:py-24 px-4 md:px-6">
+                <div className="max-w-4xl mx-auto space-y-16">
 
-                    <div className="relative border-l-2 border-primary/20 ml-4 md:ml-0 space-y-12 md:space-y-0">
+                    <div className="relative border-l-2 border-border/60 ml-4 md:ml-0 space-y-12 md:space-y-0">
                         {dates.map((item, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                className="relative md:pl-12 pb-12 last:pb-0"
+                                className="relative md:pl-16 pb-16 last:pb-0"
                             >
                                 {/* Timeline Dot */}
-                                <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-background border-2 border-primary ring-4 ring-background" />
+                                <div className={cn(
+                                    "absolute -left-[9px] top-6 h-5 w-5 rounded-full border-4 ring-4 ring-background transition-all duration-500",
+                                    item.status === "Closed" ? "bg-muted border-muted md:ring-muted/20" : "bg-primary border-primary md:ring-primary/10"
+                                )} />
 
                                 <div className={cn(
-                                    "flex flex-col md:flex-row gap-6 p-6 rounded-xl border bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all",
+                                    "flex flex-col md:flex-row gap-6 p-8 rounded-2xl border bg-card hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:-translate-x-1",
                                     item.border
                                 )}>
-                                    <div className="md:w-48 shrink-0">
-                                        <div className="flex items-center gap-2 text-primary font-semibold mb-1">
-                                            <Calendar className="h-4 w-4" />
-                                            <span>{item.date}</span>
+                                    <div className="md:w-56 shrink-0 flex flex-col justify-between">
+                                        <div className="space-y-2">
+                                            <div className="flex items-center gap-2 text-primary font-bold text-lg">
+                                                <Calendar className="h-5 w-5" />
+                                                <span>{item.date}</span>
+                                            </div>
+                                            <span className={cn("inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide", item.bg, item.color)}>
+                                                {item.status}
+                                            </span>
                                         </div>
-                                        <span className={cn("inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium", item.bg, item.color)}>
-                                            {item.status}
-                                        </span>
                                     </div>
 
-                                    <div className="flex-1 space-y-2">
-                                        <h3 className="text-xl font-bold">{item.event}</h3>
-                                        <p className="text-muted-foreground">{item.description}</p>
+                                    <div className="flex-1 space-y-3">
+                                        <h3 className="text-2xl font-bold text-foreground">{item.event}</h3>
+                                        <p className="text-muted-foreground text-lg leading-relaxed">{item.description}</p>
                                     </div>
 
-                                    <div className="hidden md:flex items-center justify-center">
-                                        <div className="p-2 rounded-full bg-muted/50 hover:bg-primary/10 transition-colors">
-                                            <ArrowRight className="h-5 w-5 text-muted-foreground hover:text-primary" />
+                                    <div className="hidden md:flex items-center justify-center pl-4 border-l border-border/40">
+                                        <div className="p-3 rounded-full bg-muted/30 text-muted-foreground group-hover:text-primary transition-colors">
+                                            <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform" />
                                         </div>
                                     </div>
                                 </div>
@@ -155,10 +160,10 @@ export default function ImportantDatesPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
-                        className="flex items-start p-6 bg-blue-50/50 dark:bg-blue-950/20 text-blue-800 dark:text-blue-200 rounded-xl border border-blue-200 dark:border-blue-900"
+                        className="flex items-start p-6 bg-blue-500/5 text-blue-600 dark:text-blue-400 rounded-xl border border-blue-500/20"
                     >
-                        <AlertCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-                        <p className="text-sm leading-relaxed">
+                        <AlertCircle className="h-6 w-6 mr-4 mt-0.5 flex-shrink-0" />
+                        <p className="text-base leading-relaxed">
                             <strong>Note:</strong> All deadlines are at 11:59 PM Indian Standard Time (IST). Deadlines are strict and no extensions will be granted.
                         </p>
                     </motion.div>

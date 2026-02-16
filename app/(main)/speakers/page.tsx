@@ -123,7 +123,7 @@ export default function SpeakersPage() {
                 title="Speakers"
                 description="Renowned experts sharing their insights."
             />
-            <div className="container py-16 px-4 md:px-6">
+            <div className="container py-16 md:py-24 px-4 md:px-6">
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
                     {speakers.map((speaker, index) => (
                         <motion.div

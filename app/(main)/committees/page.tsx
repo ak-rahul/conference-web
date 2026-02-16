@@ -50,45 +50,62 @@ const committeeMembers = [
 
 export default function CommitteesPage() {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen bg-background">
             <PageHeader
                 title="Organizing Committee"
                 description="The dedicated team responsible for ICAM 2026."
             />
 
-            <div className="container py-16 px-4 md:px-6 space-y-16">
+            <div className="container py-16 md:py-24 px-4 md:px-6 space-y-20">
                 {committeeMembers.map((section, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className="space-y-8"
-                    >
-                        <div className="flex items-center gap-4">
-                            <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">{section.role}</h2>
+                    <div key={index} className="space-y-10">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="flex items-center gap-6"
+                        >
+                            <h2 className="text-3xl font-bold text-foreground text-nowrap">{section.role}</h2>
                             <div className="h-px bg-border flex-1" />
-                        </div>
-                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        </motion.div>
+
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                             {section.members.map((member, mIndex) => (
-                                <Card key={mIndex} className="group overflow-hidden border-muted/50 hover:border-primary/50 transition-colors">
-                                    <div className="flex flex-col p-6 space-y-2">
-                                        <p className="font-semibold text-lg leading-tight group-hover:text-primary transition-colors">{member.name}</p>
-                                        <p className="text-sm text-muted-foreground">{member.affiliation}</p>
-                                    </div>
-                                </Card>
+                                <motion.div
+                                    key={mIndex}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: mIndex * 0.05 }}
+                                >
+                                    <Card className="h-full border-muted hover:border-primary/40 transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50 backdrop-blur-sm">
+                                        <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
+                                            <div className="h-20 w-20 rounded-full bg-primary/10 flex items-center justify-center text-2xl font-bold text-primary mb-2">
+                                                {member.name.charAt(0)}
+                                            </div>
+                                            <div className="space-y-2">
+                                                <h3 className="font-semibold text-lg leading-tight">{member.name}</h3>
+                                                <p className="text-sm text-muted-foreground">{member.affiliation}</p>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                </motion.div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
 
-                <div className="mt-16 p-8 rounded-2xl bg-muted/30 border border-primary/10 text-center space-y-4">
-                    <h3 className="text-xl font-semibold">Join the Committee</h3>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-20 p-10 rounded-3xl bg-muted/30 border border-primary/10 text-center space-y-6 max-w-3xl mx-auto"
+                >
+                    <h3 className="text-2xl font-bold">Join the Committee</h3>
+                    <p className="text-muted-foreground text-lg">
                         We are always looking for volunteers to help organize future editions of ICAM. If you are interested in contributing, please reach out to us.
                     </p>
-                </div>
+                </motion.div>
             </div>
         </div>
     )
