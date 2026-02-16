@@ -25,7 +25,7 @@ export function AboutSection() {
                             Shaping the Future of <span className="text-primary">Global Research</span>
                         </h2>
                         <p className="text-muted-foreground text-lg/relaxed">
-                            The International Conference on Advanced Research (ICAR 2026) is a premier forum for presenting innovations in science, engineering, and technology.
+                            The International Conference on Advanced Functional Materials for Clean Energy, Environment, and Healthcare (ICAM 2026) is a premier forum for presenting innovations in science, engineering, and technology.
                             Our mission is to bring together leading academicians, scientists, researchers, and scholars to exchange specific experiences and share results.
                         </p>
 

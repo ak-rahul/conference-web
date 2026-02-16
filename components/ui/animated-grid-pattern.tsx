@@ -43,11 +43,10 @@ export function AnimatedGridPattern({
         ];
     }
 
-    // Adjust the generateSquares function to return objects with id, x, and y
     function generateSquares(count: number) {
         return Array.from({ length: count }, (_, i) => ({
             id: i,
-            pos: [0, 0], // Initial position, will be updated in useEffect
+            pos: [0, 0],
         }));
     }
 
@@ -117,14 +116,9 @@ export function AnimatedGridPattern({
                         animate={{ opacity: maxOpacity }}
                         transition={{
                             duration,
-                            repeat: 1,
+                            repeat: Infinity,
                             delay: index * 0.1,
                             repeatType: "reverse",
-                        }}
-                        onAnimationComplete={() => {
-                            const newSquares = [...squares];
-                            newSquares[index] = { ...newSquares[index], pos: getPos() };
-                            setSquares(newSquares);
                         }}
                         key={`${x}-${y}-${index}`}
                         width={width - 1}

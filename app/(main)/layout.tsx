@@ -1,18 +1,15 @@
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
-import { createClient } from "@/lib/supabase/server"
+// import { createClient } from "@/lib/supabase/server"
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
 import { cn } from "@/lib/utils"
 
-export default async function MainLayout({
+export default function MainLayout({
     children,
 }: {
     children: React.ReactNode
 }) {
-    const supabase = await createClient()
-    const {
-        data: { user },
-    } = await supabase.auth.getUser()
+    // Backend logic removed for static site
 
     return (
         <div className="relative flex min-h-screen flex-col bg-background overflow-hidden">
@@ -30,7 +27,7 @@ export default async function MainLayout({
                 />
             </div>
 
-            <SiteHeader user={user} />
+            <SiteHeader />
             <div className="flex-1">{children}</div>
             <SiteFooter />
         </div>

@@ -9,28 +9,28 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "ICAR 2026 - International Conference on Advanced Research",
-    template: "%s | ICAR 2026",
+    default: "ICAM 2026 - International Conference on Advanced Functional Materials for Clean Energy, Environment, and Healthcare",
+    template: "%s | ICAM 2026",
   },
-  description: "Join leading researchers and innovators at ICAR 2026. March 16-17, New York City. Submit your papers and register now.",
-  keywords: ["conference", "research", "AI", "technology", "science", "symposium", "New York"],
-  authors: [{ name: "ICAR Organization" }],
-  creator: "ICAR Organization",
+  description: "Join leading researchers at ICAM 2026. March 05-06, 2026, Mini Seminar Hall, Seminar Complex, CUSAT.",
+  keywords: ["conference", "research", "materials science", "clean energy", "healthcare", "environment", "ICAM", "CUSAT"],
+  authors: [{ name: "ICAM Organization" }],
+  creator: "ICAM Organization",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://icar2026.org",
-    title: "ICAR 2026 - International Conference on Advanced Research",
-    description: "Join leading researchers and innovators at ICAR 2026. March 16-17, New York City.",
-    siteName: "ICAR 2026",
+    url: "https://icam2026.org",
+    title: "ICAM 2026 - Advanced Functional Materials for Clean Energy, Environment, and Healthcare",
+    description: "International Conference on Advanced Functional Materials for Clean Energy, Environment, and Healthcare. March 05-06, 2026. Mini Seminar Hall, Seminar Complex, CUSAT.",
+    siteName: "ICAM 2026",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ICAR 2026",
-    description: "International Conference on Advanced Research. March 16-17, 2026.",
-    creator: "@icar2025",
+    title: "ICAM 2026",
+    description: "International Conference on Advanced Materials. March 05-06, 2026.",
+    creator: "@icam2026",
   },
-  metadataBase: new URL("https://icar2025.org"),
+  metadataBase: new URL("https://icam2026.org"),
 };
 
 // ... existing imports

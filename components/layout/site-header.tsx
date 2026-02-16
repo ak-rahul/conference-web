@@ -21,20 +21,21 @@ import { cn } from "@/lib/utils"
 const routes = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/speakers", label: "Speakers" },
+    { href: "/committees", label: "Committees" },
     { href: "/call-for-papers", label: "Call for Papers" },
     { href: "/important-dates", label: "Important Dates" },
-    { href: "/committees", label: "Committees" },
-    { href: "/speakers", label: "Speakers" },
     { href: "/contact", label: "Contact" },
 ]
 
-import { User } from "@supabase/supabase-js"
+// Removed User import since we are going static
+// import { User } from "@supabase/supabase-js"
 
 interface SiteHeaderProps {
-    user: User | null
+    // user: User | null // Removed user prop
 }
 
-export function SiteHeader({ user }: SiteHeaderProps) {
+export function SiteHeader({ }: SiteHeaderProps) {
     const [isOpen, setIsOpen] = React.useState(false)
 
     return (
@@ -43,7 +44,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                 <div className="mr-4 hidden md:flex">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
                         <span className="hidden font-bold sm:inline-block">
-                            ICAR 2026
+                            ICAM 2026
                         </span>
                     </Link>
                     <NavigationMenu>
@@ -78,7 +79,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                                 className="flex items-center"
                                 onClick={() => setIsOpen(false)}
                             >
-                                <span className="font-bold">ICAR 2026</span>
+                                <span className="font-bold">ICAM 2026</span>
                             </Link>
                         </div>
                         <div className="flex flex-col gap-4 mt-4 px-7">
@@ -100,15 +101,11 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                         {/* Search or other items */}
                     </div>
                     <nav className="flex items-center gap-2">
-                        {user ? (
-                            <Button asChild variant="default" size="sm">
-                                <Link href="/dashboard">Dashboard</Link>
-                            </Button>
-                        ) : (
-                            <Button asChild variant="default" size="sm">
-                                <Link href="/login">Login / Register</Link>
-                            </Button>
-                        )}
+                        <Button asChild variant="default" size="sm">
+                            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfupJ69J9vTLpca45aYIz0_OwRe74ZUnkU79CTmgzjq-eFqnw/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                                Register Now
+                            </Link>
+                        </Button>
                         <ModeToggle />
                     </nav>
                 </div>

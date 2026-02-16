@@ -7,28 +7,28 @@ import { Badge } from "@/components/ui/badge"
 
 const speakers = [
     {
-        name: "Dr. Sarah Johnson",
-        role: "Professor of AI, MIT",
-        topic: "The Future of Generative AI",
-        image: "https://i.pravatar.cc/150?u=sarah",
-        initials: "SJ",
-        tags: ["AI", "Ethics"]
+        name: "Adjunct Prof. Jorge Beltramini",
+        role: "Queensland University of Technology, Australia",
+        topic: "Keynote Speaker",
+        image: "https://i.pravatar.cc/150?u=jorge",
+        initials: "JB",
+        tags: ["Materials", "Energy"]
     },
     {
-        name: "Prof. David Chen",
-        role: "Director, Quantum Institute",
-        topic: "Quantum Computing Breakthroughs",
-        image: "https://i.pravatar.cc/150?u=david",
-        initials: "DC",
-        tags: ["Quantum", "Physics"]
+        name: "Prof. K. George Thomas",
+        role: "IISER-Thiruvananthapuram",
+        topic: "Keynote Speaker",
+        image: "https://i.pravatar.cc/150?u=george",
+        initials: "GT",
+        tags: ["Chemistry", "Research"]
     },
     {
-        name: "Dr. Emily Wong",
-        role: "Chief Scientist, BioTech Corp",
-        topic: "CRISPR & Genetic Engineering",
-        image: "https://i.pravatar.cc/150?u=emily",
-        initials: "EW",
-        tags: ["BioTech", "Genetics"]
+        name: "Prof. Parasuraman Selvam",
+        role: "IIT-Madras, Chennai",
+        topic: "Keynote Speaker",
+        image: "https://i.pravatar.cc/150?u=selvam",
+        initials: "PS",
+        tags: ["Nanotech", "Materials"]
     },
 ]
 

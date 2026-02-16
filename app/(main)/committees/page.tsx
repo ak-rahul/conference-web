@@ -43,7 +43,7 @@ export default function CommitteesPage() {
         <div className="flex flex-col min-h-screen">
             <PageHeader
                 title="Organizing Committee"
-                description="The dedicated team responsible for ICAR 2025."
+                description="The dedicated team responsible for ICAM 2026."
             />
 
             <div className="container py-16 px-4 md:px-6 space-y-16">
@@ -82,7 +82,7 @@ export default function CommitteesPage() {
                 <div className="mt-16 p-8 rounded-2xl bg-muted/30 border border-primary/10 text-center space-y-4">
                     <h3 className="text-xl font-semibold">Join the Committee</h3>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        We are always looking for volunteers to help organize future editions of ICAR. If you are interested in contributing, please reach out to us.
+                        We are always looking for volunteers to help organize future editions of ICAM. If you are interested in contributing, please reach out to us.
                     </p>
                 </div>
             </div>

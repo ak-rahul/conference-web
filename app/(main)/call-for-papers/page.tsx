@@ -12,7 +12,7 @@ export default function CallForPapersPage() {
         <div className="flex flex-col min-h-screen">
             <PageHeader
                 title="Call for Papers"
-                description="We invite original research contributions for ICAR 2026."
+                description="We invite original research contributions for ICAM 2026."
             />
 
             <div className="container py-12 px-4 md:px-6 space-y-24">
@@ -29,7 +29,7 @@ export default function CallForPapersPage() {
                         <div>
                             <h2 className="text-3xl font-bold tracking-tighter mb-4">Submission Guidelines</h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                ICAR 2026 accepts submissions of original, unpublished research papers. All submissions will be double-blind peer-reviewed by at least three members of the International Program Committee.
+                                ICAM 2026 accepts submissions of original, unpublished research papers. All submissions will be double-blind peer-reviewed by at least three members of the International Program Committee.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mt-4">
                                 Accepted papers will be published in the Conference Proceedings (indexed by Scopus and Web of Science) and selected extended papers will be recommended for publication in partnering high-impact journals.
@@ -37,11 +37,7 @@ export default function CallForPapersPage() {
                         </div>
 
                         <div className="flex gap-4">
-                            <Button size="lg" asChild className="h-12 px-6">
-                                <Link href="/submit-paper">
-                                    <Send className="w-4 h-4 mr-2" /> Submit Paper
-                                </Link>
-                            </Button>
+                            {/* Submission buttons removed - see Guidelines */}
                             <Button variant="outline" size="lg" className="h-12 px-6">
                                 <FileText className="w-4 h-4 mr-2" /> Download Template
                             </Button>

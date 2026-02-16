@@ -46,9 +46,9 @@ export default function ContactPage() {
                                     <div>
                                         <h3 className="font-semibold text-lg mb-1">Conference Venue</h3>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            Grand Convention Center<br />
-                                            123 Conference Ave, Suite 400<br />
-                                            New York, NY 10001, USA
+                                            Mini Seminar Hall,<br />
+                                            Seminar Complex,<br />
+                                            CUSAT, Kochi, Kerala
                                         </p>
                                     </div>
                                 </div>
@@ -58,8 +58,8 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-lg mb-1">Email Support</h3>
-                                        <p className="text-muted-foreground">info@icar2025.org</p>
-                                        <p className="text-muted-foreground">support@icar2025.org</p>
+                                        <p className="text-muted-foreground">info@icam2026.org</p>
+                                        <p className="text-muted-foreground">support@icam2026.org</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-muted/50 transition-colors border border-transparent hover:border-muted">
@@ -167,7 +167,7 @@ export default function ContactPage() {
                         <AccordionItem value="item-3" className="border rounded-xl px-4 bg-muted/20">
                             <AccordionTrigger className="text-lg font-medium py-6 hover:no-underline">Is there a virtual participation option?</AccordionTrigger>
                             <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
-                                Yes, ICAR 2025 is a hybrid event. You can choose to attend in-person in New York or virtually via our online platform, which will feature live streaming and interactive Q&A sessions.
+                                Yes, ICAM 2026 is a hybrid event. You can choose to attend in-person at CUSAT or virtually via our online platform, which will feature live streaming and interactive Q&A sessions.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-4" className="border rounded-xl px-4 bg-muted/20">
