@@ -61,7 +61,6 @@ export function SpeakersPreview() {
                                     <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                     <div className="relative w-full h-[60%] overflow-hidden bg-muted">
-
                                         <Image
                                             src={speaker.image}
                                             alt={speaker.name}
@@ -76,7 +75,7 @@ export function SpeakersPreview() {
                                     </div>
 
                                     <div className="relative z-20 -mt-16 flex flex-col items-center w-full px-6 pb-8 text-center space-y-3 flex-grow justify-end">
-                                        <div className="h-16 w-16 rounded-full border-4 border-background shadow-lg overflow-hidden bg-muted mb-2">
+                                        <div className="relative h-16 w-16 rounded-full border-4 border-background shadow-lg overflow-hidden bg-muted mb-2">
                                             <Image
                                                 src={speaker.image}
                                                 alt={speaker.initials}
