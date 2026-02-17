@@ -33,6 +33,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://icam2026.org"),
 };
 
+
 // ... existing imports
 
 export default async function RootLayout({

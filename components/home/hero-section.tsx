@@ -12,7 +12,7 @@ export function HeroSection() {
     const conferenceDate = new Date("2026-03-05T12:00:00")
 
     return (
-        <section className="relative overflow-hidden py-32 lg:py-48 min-h-screen flex items-center justify-center">
+        <section className="relative overflow-hidden py-20 lg:py-28 min-h-screen flex items-center justify-center">
             {/* Background Grid & Spotlight */}
             <div className="absolute inset-0 w-full h-full bg-background bg-grid-small-black/[0.2] dark:bg-grid-small-white/[0.2] -z-20" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent -z-10" />

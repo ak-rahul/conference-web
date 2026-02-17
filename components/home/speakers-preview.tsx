@@ -4,107 +4,14 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import Speaker1 from "@/assets/speakers/1.jpeg"
-import Speaker2 from "@/assets/speakers/2.jpeg"
-import Speaker3 from "@/assets/speakers/3.jpeg"
-import Speaker4 from "@/assets/speakers/4.jpeg"
-import Speaker5 from "@/assets/speakers/5.jpeg"
-import Speaker6 from "@/assets/speakers/6.jpeg"
-import Speaker7 from "@/assets/speakers/7.jpeg"
-import Speaker8 from "@/assets/speakers/8.jpeg"
-import Speaker9 from "@/assets/speakers/9.jpeg"
-import Speaker10 from "@/assets/speakers/10.jpeg"
+import Image from "next/image"
+import { speakers } from "@/lib/speakers"
 
-import Speaker11 from "@/assets/speakers/11.jpeg"
 
-const speakers = [
-    {
-        name: "Adjunct Prof. Jorge Beltramini",
-        role: "Queensland University of Technology, Australia",
-        topic: "Keynote Speaker",
-        image: Speaker1.src,
-        initials: "JB",
-    },
-    {
-        name: "Prof. K. George Thomas",
-        role: "Department of Chemistry, IISER-Thiruvananthapuram",
-        topic: "Keynote Speaker",
-        image: Speaker2.src,
-        initials: "GT",
-    },
-    {
-        name: "Prof. Parasuraman Selvam",
-        role: "Department of Chemistry, IIT-Madras, Chennai",
-        topic: "Keynote Speaker",
-        image: Speaker3.src,
-        initials: "PS",
-    },
-    {
-        name: "Dr. Vijayakumar Chakkooth",
-        role: "Senior Principal Scientist, CSIR-NIIST, Thiruvananthapuram",
-        topic: "Keynote Speaker",
-        image: Speaker4.src,
-        initials: "VC",
-    },
-    {
-        name: "Prof. N. K. Renuka",
-        role: "Department of Chemistry, University of Calicut",
-        topic: "Keynote Speaker",
-        image: Speaker5.src,
-        position: "35% 5%",
-        initials: "NR",
-    },
-    {
-        name: "Dr. Santanu Chaudhuri",
-        role: "Chief Technology Officer, Thermax Limited, Pune",
-        topic: "Keynote Speaker",
-        image: Speaker6.src,
-        initials: "SC",
-    },
-    {
-        name: "Prof. A. Sakthivel",
-        role: "Department of Chemistry, Central University of Kerala",
-        topic: "Keynote Speaker",
-        image: Speaker7.src,
-        initials: "AS",
-    },
-    {
-        name: "Prof. Sushanta Kumar Badamali",
-        role: "Department of Chemistry, Utkal University, Bhubaneswar",
-        topic: "Keynote Speaker",
-        image: Speaker8.src,
-        position: "center 25%",
-        initials: "SB",
-    },
-    {
-        name: "Prof. Kandalam Ramanujachary",
-        role: "Department of Chemistry & Biochemistry, Rowan University, USA",
-        topic: "Keynote Speaker",
-        image: Speaker9.src,
-        position: "center 25%",
-        initials: "KR",
-    },
-    {
-        name: "Prof. Ida Tiwari",
-        role: "Department of Chemistry, Banaras Hindu University, Varanasi",
-        topic: "Keynote Speaker",
-        image: Speaker10.src,
-        position: "center 25%",
-        initials: "IT",
-    },
-    {
-        name: "Dr. Swathi Mukundan",
-        role: "Department of Chemical Engineering, Loughborough University, U.K.",
-        topic: "Keynote Speaker",
-        image: Speaker11.src,
-        initials: "SM",
-        scale: 1.5,
-    },
-]
 
 export function SpeakersPreview() {
     return (
-        <section className="py-24 md:py-32 relative overflow-hidden bg-background">
+        <section className="py-16 md:py-24 relative overflow-hidden bg-background">
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
             <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
@@ -155,25 +62,27 @@ export function SpeakersPreview() {
 
                                     <div className="relative w-full h-[60%] overflow-hidden bg-muted">
 
-                                        <div className="w-full h-full transform group-hover:scale-110 transition-transform duration-700">
-                                            <img
-                                                src={speaker.image}
-                                                alt={speaker.name}
-                                                className="w-full h-full object-cover"
-                                                style={{
-                                                    objectPosition: speaker.position || 'center',
-                                                    transform: speaker.scale ? `scale(${speaker.scale})` : undefined
-                                                }}
-                                            />
-                                        </div>
+                                        <Image
+                                            src={speaker.image}
+                                            alt={speaker.name}
+                                            fill
+                                            placeholder="blur"
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                            style={{
+                                                objectPosition: speaker.position || 'center',
+                                                transform: speaker.scale ? `scale(${speaker.scale})` : undefined
+                                            }}
+                                        />
                                     </div>
 
                                     <div className="relative z-20 -mt-16 flex flex-col items-center w-full px-6 pb-8 text-center space-y-3 flex-grow justify-end">
                                         <div className="h-16 w-16 rounded-full border-4 border-background shadow-lg overflow-hidden bg-muted mb-2">
-                                            <img
+                                            <Image
                                                 src={speaker.image}
                                                 alt={speaker.initials}
-                                                className="w-full h-full object-cover"
+                                                fill
+                                                placeholder="blur"
+                                                className="object-cover"
                                                 style={{
                                                     objectPosition: speaker.position || 'center',
                                                     transform: speaker.scale ? `scale(${speaker.scale})` : undefined
@@ -183,7 +92,9 @@ export function SpeakersPreview() {
 
                                         <div>
                                             <h3 className="font-bold text-lg leading-tight mb-1">{speaker.name}</h3>
-                                            <p className="text-primary text-xs font-medium uppercase tracking-wider">{speaker.topic}</p>
+                                            {speaker.topic && (
+                                                <p className="text-primary text-xs font-medium uppercase tracking-wider">{speaker.topic}</p>
+                                            )}
                                         </div>
 
                                         <p className="text-sm text-muted-foreground line-clamp-2">
