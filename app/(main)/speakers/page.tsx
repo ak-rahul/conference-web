@@ -6,115 +6,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { motion } from "framer-motion"
 
 
-import Speaker1 from "@/assets/speakers/1.jpeg"
-import Speaker2 from "@/assets/speakers/2.jpeg"
-import Speaker3 from "@/assets/speakers/3.jpeg"
-import Speaker4 from "@/assets/speakers/4.jpeg"
-import Speaker5 from "@/assets/speakers/5.jpeg"
-import Speaker6 from "@/assets/speakers/6.jpeg"
-import Speaker7 from "@/assets/speakers/7.jpeg"
-import Speaker8 from "@/assets/speakers/8.jpeg"
-import Speaker9 from "@/assets/speakers/9.jpeg"
-import Speaker10 from "@/assets/speakers/10.jpeg"
+import { speakers } from "@/lib/speakers"
 
 
-import Speaker11 from "@/assets/speakers/11.jpeg"
-
-const speakers = [
-    {
-        name: "Adjunct Prof. Jorge Beltramini",
-        role: "Queensland University of Technology, Australia",
-        topic: "Keynote Speaker",
-        bio: "Distinguished researcher from Queensland University of Technology, Australia.",
-        image: Speaker1.src,
-        initials: "JB",
-    },
-    {
-        name: "Prof. K. George Thomas",
-        role: "Department of Chemistry, IISER-Thiruvananthapuram",
-        topic: "Keynote Speaker",
-        bio: "Renowned professor from the Department of Chemistry at IISER-Thiruvananthapuram.",
-        image: Speaker2.src,
-        initials: "GT",
-    },
-    {
-        name: "Prof. Parasuraman Selvam",
-        role: "Department of Chemistry, IIT-Madras, Chennai",
-        topic: "Keynote Speaker",
-        bio: "Expert academic from the Department of Chemistry, IIT-Madras.",
-        image: Speaker3.src,
-        initials: "PS",
-    },
-    {
-        name: "Dr. Vijayakumar Chakkooth",
-        role: "Senior Principal Scientist, CSIR-NIIST, Thiruvananthapuram",
-        topic: "Keynote Speaker",
-        bio: "Senior Principal Scientist contributing to research at CSIR-NIIST.",
-        image: Speaker4.src,
-        initials: "VC",
-    },
-    {
-        name: "Prof. N. K. Renuka",
-        role: "Department of Chemistry, University of Calicut",
-        topic: "Keynote Speaker",
-        bio: "Distinguished faculty member from the Department of Chemistry, University of Calicut.",
-        image: Speaker5.src,
-        position: "35% 5%",
-        initials: "NR",
-    },
-    {
-        name: "Dr. Santanu Chaudhuri",
-        role: "Chief Technology Officer, Thermax Limited, Pune",
-        topic: "Keynote Speaker",
-        bio: "Technology leader and CTO at Thermax Limited, Pune.",
-        image: Speaker6.src,
-        initials: "SC",
-    },
-    {
-        name: "Prof. A. Sakthivel",
-        role: "Department of Chemistry, Central University of Kerala",
-        topic: "Keynote Speaker",
-        bio: "Professor at the Department of Chemistry, Central University of Kerala, Kasaragod.",
-        image: Speaker7.src,
-        initials: "AS",
-    },
-    {
-        name: "Prof. Sushanta Kumar Badamali",
-        role: "Department of Chemistry, Utkal University, Bhubaneswar",
-        topic: "Keynote Speaker",
-        bio: "Academic leader from the Department of Chemistry, Utkal University.",
-        image: Speaker8.src,
-        position: "center 25%",
-        initials: "SB",
-    },
-    {
-        name: "Prof. Kandalam Ramanujachary",
-        role: "Department of Chemistry & Biochemistry, Rowan University, USA",
-        topic: "Keynote Speaker",
-        bio: "International expert from the Department of Chemistry & Biochemistry, Rowan University.",
-        image: Speaker9.src,
-        position: "center 25%",
-        initials: "KR",
-    },
-    {
-        name: "Prof. Ida Tiwari",
-        role: "Department of Chemistry, Banaras Hindu University, Varanasi",
-        topic: "Keynote Speaker",
-        bio: "Distinguished professor from the Department of Chemistry, BHU.",
-        image: Speaker10.src,
-        position: "center 25%",
-        initials: "IT",
-    },
-    {
-        name: "Dr. Swathi Mukundan",
-        role: "Department of Chemical Engineering, Loughborough University, U.K.",
-        topic: "Keynote Speaker",
-        bio: "Researcher from the Department of Chemical Engineering, Loughborough University.",
-        image: Speaker11.src,
-        initials: "SM",
-        scale: 1.5,
-    },
-]
 
 export default function SpeakersPage() {
     return (
@@ -123,7 +17,7 @@ export default function SpeakersPage() {
                 title="Speakers"
                 description="Renowned experts sharing their insights."
             />
-            <div className="container py-16 md:py-24 px-4 md:px-6">
+            <div className="container py-12 md:py-16 px-4 md:px-6">
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
                     {speakers.map((speaker, index) => (
                         <motion.div
@@ -138,7 +32,7 @@ export default function SpeakersPage() {
                                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                                     <Avatar className="h-32 w-32 border-4 border-background shadow-lg z-10">
                                         <AvatarImage
-                                            src={speaker.image}
+                                            src={speaker.image.src}
                                             alt={speaker.name}
                                             style={{
                                                 objectPosition: speaker.position,
@@ -155,9 +49,11 @@ export default function SpeakersPage() {
                                         <p className="text-sm font-medium text-muted-foreground">{speaker.role}</p>
                                     </div>
                                     <div className="space-y-2">
-                                        <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-2">
-                                            Keynote: {speaker.topic}
-                                        </div>
+                                        {speaker.topic && (
+                                            <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-2">
+                                                Keynote: {speaker.topic}
+                                            </div>
+                                        )}
                                         <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
                                             {speaker.bio}
                                         </p>

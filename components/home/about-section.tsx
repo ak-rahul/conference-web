@@ -3,12 +3,13 @@
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, FlaskConical, Globe2, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 
 export function AboutSection() {
     return (
-        <section className="py-24 lg:py-32 relative overflow-hidden bg-muted/20">
+        <section className="py-16 lg:py-24 relative overflow-hidden bg-muted/20">
             <div className="container px-4 md:px-6 relative z-10">
                 <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-center">
                     <motion.div
@@ -74,10 +75,12 @@ export function AboutSection() {
                             className="relative z-10 rounded-3xl overflow-hidden border-8 border-background shadow-2xl skew-y-1 hover:skew-y-0 transition-transform duration-700"
                         >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1000&auto=format&fit=crop"
                                 alt="Conference Audience"
                                 className="object-cover w-full h-[400px] md:h-[600px] hover:scale-105 transition-transform duration-1000"
+                                width={1000}
+                                height={600}
                             />
                         </motion.div>
 

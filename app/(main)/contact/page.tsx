@@ -49,7 +49,7 @@ export default function ContactPage() {
                 description="Have questions? We're here to help."
             />
 
-            <div className="container py-16 md:py-24 px-4 md:px-6">
+            <div className="container py-12 md:py-20 px-4 md:px-6">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
                     {/* Contact Info */}
                     <motion.div
