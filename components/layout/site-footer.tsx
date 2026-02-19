@@ -41,11 +41,11 @@ export function SiteFooter() {
 
                     <div className="space-y-4">
                         <h3 className="font-semibold text-foreground">Quick Links</h3>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li><Link href="/speakers" className="hover:text-primary transition-colors">Speakers</Link></li>
-                            <li><Link href="/call-for-papers" className="hover:text-primary transition-colors">Call for Papers</Link></li>
-                            <li><Link href="/committees" className="hover:text-primary transition-colors">Committees</Link></li>
-                            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
+                        <ul className="space-y-3 text-sm text-muted-foreground">
+                            <li><Link href="/speakers" className="hover:text-primary transition-colors block py-1">Speakers</Link></li>
+                            <li><Link href="/call-for-papers" className="hover:text-primary transition-colors block py-1">Call for Papers</Link></li>
+                            <li><Link href="/committees" className="hover:text-primary transition-colors block py-1">Committees</Link></li>
+                            <li><Link href="/contact" className="hover:text-primary transition-colors block py-1">Contact Us</Link></li>
                         </ul>
                     </div>
 

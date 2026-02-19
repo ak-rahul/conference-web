@@ -62,20 +62,17 @@ const getDates = () => {
             bg = "bg-green-500/10";
             border = "border-green-500/20";
         } else if (item.event.includes("Starts") && !isPast) {
-            // Future start date
             status = "Upcoming";
             color = "text-orange-500";
             bg = "bg-orange-500/10";
             border = "border-orange-500/20";
         } else {
-            // Future deadline
             status = "Open";
             color = "text-green-500";
             bg = "bg-green-500/10";
             border = "border-green-500/20";
         }
 
-        // Override for specific events if needed for visual distinction despite logic
         if (item.event === "Conference Dates") {
             if (isPast) {
                 status = "Completed";
@@ -98,9 +95,8 @@ const getDates = () => {
     });
 };
 
-const dates = getDates();
-
 export default function ImportantDatesPage() {
+    const dates = getDates();
     return (
         <div className="flex flex-col min-h-screen bg-background">
             <PageHeader

@@ -56,7 +56,7 @@ export function SpeakersPreview() {
                         style={{ width: "max-content" }}
                     >
                         {[...speakers, ...speakers].map((speaker, index) => (
-                            <div key={`${speaker.name}-${index}`} className="w-[300px] md:w-[340px] flex-shrink-0 group perspective-1000">
+                            <div key={`${speaker.name}-${index}`} className="w-[280px] sm:w-[300px] md:w-[340px] flex-shrink-0 group perspective-1000">
                                 <Card className="relative overflow-hidden border-border/40 bg-background/50 backdrop-blur-md transition-all duration-500 hover:shadow-2xl hover:border-primary/30 hover:-translate-y-2 h-[420px] flex flex-col items-center justify-between p-0 rounded-2xl">
                                     <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

@@ -110,7 +110,7 @@ export function SiteHeader() {
                                     <span className="font-bold text-2xl">ICAM 2026</span>
                                 </Link>
 
-                                <div className="flex flex-col gap-2">
+                                <div className="flex flex-col gap-4 mt-8">
                                     {routes.map((route) => {
                                         const isActive = pathname === route.href
                                         return (
@@ -131,7 +131,7 @@ export function SiteHeader() {
                                     })}
                                 </div>
 
-                                <Button asChild className="w-full text-lg h-12 rounded-xl shadow-lg shadow-primary/20">
+                                <Button asChild className="w-full text-lg h-12 rounded-xl shadow-lg shadow-primary/20 mt-4">
                                     <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfupJ69J9vTLpca45aYIz0_OwRe74ZUnkU79CTmgzjq-eFqnw/viewform?usp=header" target="_blank" rel="noopener noreferrer">
                                         Register Now
                                     </Link>

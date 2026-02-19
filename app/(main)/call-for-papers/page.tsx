@@ -41,21 +41,7 @@ export default function CallForPapersPage() {
                             </Button>
                         </div>
 
-                        <div className="bg-muted/30 p-8 rounded-2xl border border-primary/10">
-                            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                                <FileText className="h-5 w-5 text-primary" /> Submission Requirements
-                            </h3>
-                            <ul className="space-y-3">
-                                <li className="flex items-start gap-3 text-muted-foreground">
-                                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                                    <span>Original, unpublished work is mandatory.</span>
-                                </li>
-                                <li className="flex items-start gap-3 text-muted-foreground">
-                                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                                    <span>Word format (.doc/.docx) only (max 10MB).</span>
-                                </li>
-                            </ul>
-                        </div>
+
                     </motion.div>
 
                     <div className="space-y-6">

@@ -33,20 +33,20 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
     return (
         <div className="grid grid-cols-4 gap-4 text-center">
             <div className="flex flex-col items-center p-2 bg-background/50 rounded-lg border shadow-sm backdrop-blur-sm">
-                <span className="text-3xl font-bold md:text-5xl">{days}</span>
-                <span className="text-xs uppercase text-muted-foreground md:text-sm">Days</span>
+                <span className="text-2xl sm:text-3xl md:text-5xl font-bold">{days}</span>
+                <span className="text-[10px] sm:text-xs uppercase text-muted-foreground md:text-sm">Days</span>
             </div>
             <div className="flex flex-col items-center p-2 bg-background/50 rounded-lg border shadow-sm backdrop-blur-sm">
-                <span className="text-3xl font-bold md:text-5xl">{hours}</span>
-                <span className="text-xs uppercase text-muted-foreground md:text-sm">Hours</span>
+                <span className="text-2xl sm:text-3xl md:text-5xl font-bold">{hours}</span>
+                <span className="text-[10px] sm:text-xs uppercase text-muted-foreground md:text-sm">Hours</span>
             </div>
             <div className="flex flex-col items-center p-2 bg-background/50 rounded-lg border shadow-sm backdrop-blur-sm">
-                <span className="text-3xl font-bold md:text-5xl">{minutes}</span>
-                <span className="text-xs uppercase text-muted-foreground md:text-sm">Mins</span>
+                <span className="text-2xl sm:text-3xl md:text-5xl font-bold">{minutes}</span>
+                <span className="text-[10px] sm:text-xs uppercase text-muted-foreground md:text-sm">Mins</span>
             </div>
             <div className="flex flex-col items-center p-2 bg-background/50 rounded-lg border shadow-sm backdrop-blur-sm">
-                <span className="text-3xl font-bold md:text-5xl">{seconds}</span>
-                <span className="text-xs uppercase text-muted-foreground md:text-sm">Secs</span>
+                <span className="text-2xl sm:text-3xl md:text-5xl font-bold">{seconds}</span>
+                <span className="text-[10px] sm:text-xs uppercase text-muted-foreground md:text-sm">Secs</span>
             </div>
         </div>
     )
